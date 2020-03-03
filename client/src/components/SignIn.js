@@ -23,7 +23,9 @@ export default class SignIn extends Component {
       },
       data: { email: this.state.email, password: this.state.password }
     })
-      .then(results => console.log(results))
+      .then(results => {
+        localStorage.setItem("token", results.data.token);
+      })
       .catch(err => console.log(err));
   };
   handleSubmit = event => {

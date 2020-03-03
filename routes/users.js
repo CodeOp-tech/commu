@@ -12,8 +12,18 @@ router.get("/", (req, res) => {
     .catch(err => res.status(500).send(err));
 });
 //
-// GET ID
-router.get("/:id", (req, res) => {
+// GET user's profile by id
+router.get("/profile", (req, res) => {
+  const token = req.headers["x-access-token"];
+  if (!token) res.status(401).send({ msg: "Please provide a token." });
+  else {
+    jwt.verify(token, "cheese", function(err, decoded) {
+      if (err) res.status(401).send({ msg: "Please provide a valid token" });
+      else {
+        res.send({ msg: "Here's your protected data!" });
+      }
+    });
+  }
   db(`SELECT * FROM users WHERE id = ${req.params.id}`)
     .then(results => {
       res.send(results.data);
