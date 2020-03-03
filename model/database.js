@@ -36,21 +36,22 @@ con.connect(function(err) {
   });
 
   sql = `DROP TABLE if exists jobs; CREATE TABLE jobs(  id INT NOT NULL AUTO_INCREMENT,
-user_id INT NOT NULL,
- description varchar(255) NOT NULL,
-price INT(255) NOT NULL,
+  user_id INT NOT NULL,
+  title varchar(50) NOT NULL,
+  description varchar(255) NOT NULL,
+  price INT(255) NOT NULL,
   date_time varchar(255) NOT NULL,
- PRIMARY KEY (id) );`;
+  PRIMARY KEY (id) );`;
 
   con.query(sql, function(err, result) {
     if (err) throw err;
-    console.log("Table creation `jobs` was successful!");
+    console.log('Table creation "jobs" was successful!');
 
     console.log("Closing...");
   });
 
   sql = `DROP TABLE if exists areas; CREATE TABLE areas(  id INT NOT NULL AUTO_INCREMENT,
-hood INT NOT NULL,
+hood varchar(25) NOT NULL,
 PRIMARY KEY (id));`;
 
   con.query(sql, function(err, result) {
@@ -74,10 +75,10 @@ PRIMARY KEY (id));`;
 
   sql = `DROP TABLE if exists ratings; CREATE TABLE ratings(
     id INT NOT NULL AUTO_INCREMENT,
-  rating INT NOT NULL,
-  user_id INT NOT NULL,
+    rating INT NOT NULL,
+    user_id INT NOT NULL,
     PRIMARY KEY (id)
-   );`;
+    );`;
 
   con.query(sql, function(err, result) {
     if (err) throw err;
