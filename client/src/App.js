@@ -13,27 +13,25 @@ function App() {
     <Router>
       <div>
         <Switch>
-          <Route path="/signIn">
-            <SignIn />
-          </Route>
+          <Route path="/signIn" component={SignIn} />
 
-          <Route path="/signUp">
+          <Route path="/signUp" component={SignUp}>
             <SignUp />
           </Route>
 
-          <Route path="/home">
+          <Route path="/home" component={Home}>
             <Home />
           </Route>
 
-          <Route path="/profile">
+          <Route path="/profile" component={Profile}>
             <Profile />
           </Route>
 
-          <Route path="/community">
+          <Route path="/community" component={Community}>
             <Community />
           </Route>
 
-          <Route path="/jobs">
+          <Route path="/jobs" component={Jobs}>
             <Jobs />
           </Route>
 
