@@ -39,12 +39,34 @@ function App() {
 
           <Route path="/">
             <ul>
-              <li>
-                <Link to="/signIn">Sign in</Link>
-              </li>
-              <li>
-                <Link to="/signUp">Join the community!</Link>
-              </li>
+              <div class="container">
+                <div>
+                  <div
+                    type="button"
+                    class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                  >
+                    <img
+                      src="https://i.imgur.com/InarIgK.png"
+                      width="200"
+                      height="200"
+                      class="d-inline-block align-top"
+                      alt=""
+                    />
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-sm-9">
+                    <Link class="text-decoration-none text-dark" to="/signIn">
+                      Sign in
+                    </Link>
+                  </div>
+                  <div class="col-sm-9">
+                    <Link class="text-decoration-none text-dark" to="/signUp">
+                      Join the community!
+                    </Link>
+                  </div>
+                </div>
+              </div>
             </ul>
           </Route>
         </Switch>
