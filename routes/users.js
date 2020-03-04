@@ -43,7 +43,7 @@ router.post("/", (req, res) => {
       skills,
       about
 
-      ) VALUES (
+    ) VALUES (
       "${req.body.full_name}",
       "${req.body.email}",
       "${req.body.password}",
@@ -119,5 +119,18 @@ router.delete("/:id", (req, res) => {
     })
     .catch(err => res.status(500).send(err));
 });
+//
+// ENDPOINT: ALL JOBS FROM ONE USER
+router.get("/:id/jobs", async function(req, res) {
+  let results = await db(`
+      SELECT *
+      FROM jobs
+      WHERE jobs.user_id = ${req.params.id}
+  `);
+  if (results.error) {
+      res.send(results.error);
+  }
+  res.send(results.data);
+  });
 //
 module.exports = router;

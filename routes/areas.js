@@ -31,7 +31,7 @@ router.post("/", (req, res) => {
         ");`
   )
     .then(results => {
-      db("SELECT * FROM areas ORDER BY id ASC;")
+        db("SELECT * FROM areas ORDER BY id ASC;")
         .then(results => {
           res.send(results.data);
         })
@@ -59,7 +59,7 @@ router.put("/:id", (req, res) => {
 router.delete("/:id", (req, res) => {
   db(`DELETE FROM areas WHERE id = ${req.params.id}`)
     .then(results => {
-      db("SELECT * FROM areas ORDER BY id ASC;")
+        db("SELECT * FROM areas ORDER BY id ASC;")
         .then(results => {
           res.send(results.data);
         })
@@ -68,14 +68,32 @@ router.delete("/:id", (req, res) => {
     .catch(err => res.status(500).send(err));
 });
 //
-// TABLE JOIN
-// router.join("/:id", (req, res) => {
-//     db(`
-//     SELECT users.area_id
-//     FROM users
-//     LEFT JOIN areas
-//     ON users.area_id = areas.id
-//     `);
-// })
+// ENDPOINT: ALL USERS IN ONE AREA
+router.get("/:area_id/users", async function(req, res) {
+    let results = await db(`
+        SELECT users.*
+        FROM users
+        WHERE users.area_id = ${req.params.areas_id}
+    `);
+    if (results.error) {
+        res.send(results.error);
+    }
+    res.send(results.data);
+    });
+//
+// ENDPOINT + TABLE JOIN: ALL JOBS IN ONE AREA
+router.get("/:area_id/jobs", async function(req, res) {
+    let results = await db(`
+        SELECT jobs.*
+        FROM jobs
+        LEFT JOIN users
+        ON users.id = jobs.user_id
+        WHERE users.area_id = ${req.params.areas_id}
+    `);
+    if (results.error) {
+        res.send(results.error);
+    }
+    res.send(results.data);
+    });
 //
 module.exports = router;
