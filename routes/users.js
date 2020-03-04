@@ -76,7 +76,8 @@ router.post("/login", function(req, res, next) {
     if (results.data.length) {
       const token = jwt.sign(
         {
-          user_id: results.data[0].id
+          user_id: results.data[0].id,
+          area_id: results.data[0].area_id
         },
         "cheese"
       );
