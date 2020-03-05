@@ -8,6 +8,7 @@ export default class SignUp extends Component {
     this.state = {
       full_name: "",
       email: "",
+      selectedId: 0,
       password: "",
       users: [],
       areas: []
@@ -28,6 +29,11 @@ export default class SignUp extends Component {
       full_name: e.target.value
     });
   };
+  getAreaId = e => {
+    this.setState({
+      selectedId: e.target.value
+    });
+  };
 
   addUser = () => {
     axios("/users", {
@@ -39,7 +45,7 @@ export default class SignUp extends Component {
         full_name: this.state.full_name,
         email: this.state.email,
         password: this.state.password,
-        area_id: this.state.areas[3].id
+        area_id: this.state.selectedId
       }
     })
       .then(results => {
@@ -98,10 +104,18 @@ export default class SignUp extends Component {
             />
           </div>
           <div class="form-group">
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              onChange={this.getAreaId}
+            >
               <option>Choose an area</option>
               {this.state.areas.map((area, index) => {
-                return <option key={index}>{area.hood}</option>;
+                return (
+                  <option key={index} value={area.id}>
+                    {area.hood}
+                  </option>
+                );
               })}
             </select>
           </div>
