@@ -47,10 +47,10 @@ router.post("/", (req, res) => {
       "${req.body.full_name}",
       "${req.body.email}",
       "${req.body.password}",
-      "${req.body.area_id}",
-      "${req.body.img}",
-      "${req.body.skills}",
-      "${req.body.about}");`
+      "2",
+      "https://cdn.patchcdn.com/assets/layout/contribute/user-default.png",
+      "add your skills",
+      "about yourself");`
   )
     .then(results => {
       db("SELECT * FROM users ORDER BY id ASC;")
