@@ -30,6 +30,7 @@ export default class SignIn extends Component {
       })
       .catch(err => console.log(err));
   };
+
   handleSubmit = event => {
     event.preventDefault();
     this.attemptLogin();
