@@ -7,7 +7,7 @@ export default class Profile extends Component {
       <div class="container-fluid">
         <ul>
           <div>
-            <Link class="text-decoration-none text-dark" to="/profile">
+            <Link class="text-decoration-none text-dark" to="/mydetails">
               <div
                 type="button"
                 class="btn btn-light shadow p-3 mb-5 bg-white rounded"
@@ -22,7 +22,7 @@ export default class Profile extends Component {
           </div>
 
           <div>
-            <Link class="text-decoration-none text-dark" to="/profile">
+            <Link class="text-decoration-none text-dark" to="/inbox">
               <div
                 type="button"
                 class="btn btn-light shadow p-3 mb-5 bg-white rounded"
@@ -36,7 +36,7 @@ export default class Profile extends Component {
             </Link>
           </div>
           <div>
-            <Link class="text-decoration-none text-dark" to="/profile">
+            <Link class="text-decoration-none text-dark" to="/favorites">
               <div
                 type="button"
                 class="btn btn-light shadow p-3 mb-5 bg-white rounded"

@@ -7,7 +7,7 @@ export default class Jobs extends Component {
       <div class="container-fluid">
         <ul>
           <div>
-            <Link class="text-decoration-none text-dark" to="/jobs">
+            <Link class="text-decoration-none text-dark" to="/post">
               <div
                 type="button"
                 class="btn btn-light shadow p-3 mb-5 bg-white rounded"
@@ -22,7 +22,7 @@ export default class Jobs extends Component {
           </div>
 
           <div>
-            <Link class="text-decoration-none text-dark" to="/jobs">
+            <Link class="text-decoration-none text-dark" to="/search">
               <div
                 type="button"
                 class="btn btn-light shadow p-3 mb-5 bg-white rounded"
