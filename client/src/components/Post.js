@@ -9,6 +9,7 @@ export default class Post extends Component {
           <Link class="text-decoration-none text-dark" to="/post"></Link>
           POST JOBS
         </div>
+        <div class="d-flex p-2 bd-highlight"></div>
       </div>
     );
   }
