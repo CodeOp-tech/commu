@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 import axios from "axios";
 
@@ -29,6 +30,9 @@ export default class SignUp extends Component {
       full_name: e.target.value
     });
   };
+  handleSubmit() {
+    this.props.history.push("/signIn");
+  }
   getAreaId = e => {
     this.setState({
       selectedId: e.target.value
@@ -52,7 +56,6 @@ export default class SignUp extends Component {
         this.setState({
           users: results
         });
-        // this.props.history.push("/home");
       })
       .catch(err => console.log(err));
   };
@@ -72,7 +75,7 @@ export default class SignUp extends Component {
   render() {
     return (
       <div>
-        <h1>Join commu today!</h1>
+        <h1>Create account</h1>
         <form>
           <div class="form-group">
             <label for="exampleFormControlInput1">Full name</label>
@@ -120,13 +123,57 @@ export default class SignUp extends Component {
             </select>
           </div>
 
+          {/* <!-- Button trigger modal --> */}
+
           <button
             type="button"
             class="btn btn-dark"
-            onClick={e => this.addUser()}
+            data-toggle="modal"
+            data-target="#staticBackdrop"
+            onClick={this.addUser}
           >
             Join
           </button>
+
+          {/* <!-- Modal --> */}
+          <div
+            class="modal fade"
+            id="staticBackdrop"
+            data-backdrop="static"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="staticBackdropLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="staticBackdropLabel">
+                    Wohoo, you're part of Commu!
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+
+                <div class="modal-footer">
+                  <Link to="/signIn">
+                    {/* <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-dismiss="modal"
+                    >
+                      Login
+                    </button> */}
+                    Login
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
         </form>
       </div>
     );
