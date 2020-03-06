@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class Favourites extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container py-4">
         <div className="card shadow p-3 mb-5 bg-white rounded">
           <Link className="text-decoration-none text-dark" to="/favorites">
             <button

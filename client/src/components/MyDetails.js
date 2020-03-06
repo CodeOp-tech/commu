@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class MyDetails extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container py-4">
         <div className="card">
           <div className="card-img-right">
             <button

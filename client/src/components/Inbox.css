@@ -1,4 +1,4 @@
-.container-fluid {
+.container {
   display: flex;
   align-items: stretch;
 }
@@ -37,4 +37,7 @@ p {
   font-weight: 300;
   line-height: 1.7em;
   color: #999;
+}
+.card {
+  background-color: rgb(116, 155, 120);
 }

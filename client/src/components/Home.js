@@ -6,7 +6,7 @@ export default class Home extends Component {
   render() {
     return (
       <div>
-        <div class="container-fluid">
+        <div class="container py-4">
           <h1>
             <Header />
           </h1>

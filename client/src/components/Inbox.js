@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class Inbox extends Component {
   render() {
     return (
-      <div className="container">
+      <div className="container py-4">
         <nav id="sidebar">
           <div className="sidebar-header">
             <h3>
