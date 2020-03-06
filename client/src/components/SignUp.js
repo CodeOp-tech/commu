@@ -9,30 +9,37 @@ export default class SignUp extends Component {
     this.state = {
       full_name: "",
       email: "",
-      selectedId: 0,
       password: "",
+      selectedId: 0,
       users: [],
       areas: []
     };
   }
+
   handleEmail = e => {
     this.setState({
       email: e.target.value
     });
   };
+
   handlePassword = e => {
     this.setState({
       password: e.target.value
     });
   };
+
   handleName = e => {
     this.setState({
       full_name: e.target.value
     });
   };
-  handleSubmit() {
+
+  handleSubmit(event) {
+    event.preventDefault();
+
     this.props.history.push("/signIn");
   }
+
   getAreaId = e => {
     this.setState({
       selectedId: e.target.value
@@ -121,6 +128,13 @@ export default class SignUp extends Component {
                 );
               })}
             </select>
+            {/* <button
+            type="button"
+            class="btn btn-dark"
+            onClick={this.addUser}
+          >
+            Join
+          </button> */}
           </div>
 
           {/* <!-- Button trigger modal --> */}
@@ -159,18 +173,17 @@ export default class SignUp extends Component {
                   ></button>
                 </div>
 
-                <div class="modal-footer">
-                  <Link to="/signIn">
-                    {/* <button
-                      type="button"
-                      class="btn btn-secondary"
-                      data-dismiss="modal"
-                    >
-                      Login
-                    </button> */}
-                    Login
-                  </Link>
-                </div>
+                {/* <Link to="/signIn"> */}
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                  onClick={e => this.handleSubmit(e)}
+                >
+                  Login
+                </button>
+                {/* Login
+                  </Link> */}
               </div>
             </div>
           </div>
