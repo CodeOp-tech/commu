@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import axios from "axios";
 
@@ -36,7 +37,6 @@ export default class SignUp extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
     this.props.history.push("/signIn");
   }
 
