@@ -20,16 +20,18 @@ router.get("/profile", (req, res) => {
     jwt.verify(token, "cheese", function(err, decoded) {
       if (err) res.status(401).send({ msg: "Please provide a valid token" });
       else {
-        res.send({ msg: "Here's your protected data!" });
+        db(`SELECT * FROM users WHERE id = ${decoded.user_id} `).then(
+          results => {
+            res.send({
+              msg: "here is your protected data"
+            });
+          }
+        );
       }
     });
   }
-  db(`SELECT * FROM users WHERE id = ${req.params.id}`)
-    .then(results => {
-      res.send(results.data);
-    })
-    .catch(err => res.status(500).send(err));
 });
+
 //
 // POST INTO DATABASE
 router.post("/", (req, res) => {
@@ -50,7 +52,8 @@ router.post("/", (req, res) => {
       "${req.body.area_id}",
       "${req.body.img}",
       "${req.body.skills}",
-      "${req.body.about}");`
+      "${req.body.about}");
+      `
   )
     .then(results => {
       db("SELECT * FROM users ORDER BY id ASC;")
@@ -128,9 +131,9 @@ router.get("/:id/jobs", async function(req, res) {
       WHERE jobs.user_id = ${req.params.id}
   `);
   if (results.error) {
-      res.send(results.error);
+    res.send(results.error);
   }
   res.send(results.data);
-  });
+});
 //
 module.exports = router;

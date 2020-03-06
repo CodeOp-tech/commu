@@ -1,64 +1,64 @@
 {
-    "users": [
-        {
-            "full_name": "Viktoria Toth",
-            "email": "viktoria.toth@commu.com",
-            "password": "root",
-            "area_id": 6,
-            "img": "https://ca.slack-edge.com/TQUM4SE2J-URC6Y65NG-698e2799d48c-512",
-            "skills": ["Digital design","Vue","Full-stack development"],
-            "about": "Text"
-        },
-        {
-            "full_name": "Alessandra Sampalean",
-            "email": "alessandra.sampalean@commu.com",
-            "password": "root",
-            "area_id": 1,
-            "img": "https://ca.slack-edge.com/TQUM4SE2J-US6HW233Q-ded98018a9ed-512",
-            "skills": ["Photography", "Graphic design", "Full-stack development"],
-            "about": "Hi everyone! I’ve recently moved to Barcelona and I would like to get to know my  new neighbourhood. This year has been a big change, and it’s overwhelming. So I hope that I can meet the community and help each other out.  I am friendly and sociable. My Spanish is basic and improving, but I am fluent in English and Romanian. My main background is in arts(photography, graphic design), and soon to be a developer."
-        },
-        {
-            "full_name": "Daena Michelle",
-            "email": "daena.michelle@commu.com",
-            "password": "root",
-            "area_id": 2,
-            "img": "https://ca.slack-edge.com/TQUM4SE2J-URF6U0A85-76a2d466b715-512",
-            "skills": ["Fashion", "Fitness", "Full-stack development"],
-            "about": "^_^ Hey! I'm Daena, a Spanish 34yo transgender girl that has recently learnt how to properly code (a full-stack developer, so we're called!). I also like fashion, videogames and fitness. Message me if you are interested in my skills!"
-        }
-    ],
+  "users": [
+    {
+      "full_name": "Viktoria Toth",
+      "email": "viktoria.toth@commu.com",
+      "password": "root",
+      "area_id": 6,
+      "img": "https://ca.slack-edge.com/TQUM4SE2J-URC6Y65NG-698e2799d48c-512",
+      "skills": ["Digital design", "Vue", "Full-stack development"],
+      "about": "Imagine the clouds dripping.Dig a hole in your garden to put them in."
+    },
+    {
+      "full_name": "Alessandra Sampalean",
+      "email": "alessandra.sampalean@commu.com",
+      "password": "root",
+      "area_id": 1,
+      "img": "https://ca.slack-edge.com/TQUM4SE2J-US6HW233Q-ded98018a9ed-512",
+      "skills": ["Photography", "Graphic design", "Full-stack development"],
+      "about": "Hi everyone! I’ve recently moved to Barcelona and I would like to get to know my  new neighbourhood. This year has been a big change, and it’s overwhelming. So I hope that I can meet the community and help each other out.  I am friendly and sociable. My Spanish is basic and improving, but I am fluent in English and Romanian. My main background is in arts(photography, graphic design), and soon to be a developer."
+    },
+    {
+      "full_name": "Daena Michelle",
+      "email": "daena.michelle@commu.com",
+      "password": "root",
+      "area_id": 2,
+      "img": "https://ca.slack-edge.com/TQUM4SE2J-URF6U0A85-76a2d466b715-512",
+      "skills": ["Fashion", "Fitness", "Full-stack development"],
+      "about": "^_^ Hey! I'm Daena, a Spanish 34yo transgender girl that has recently learnt how to properly code (a full-stack developer, so we're called!). I also like fashion, videogames and fitness. Message me if you are interested in my skills!"
+    }
+  ],
 
-    "areas": [
-        {
-            "hood": "Ciutat Vella"
-        },
-        {
-            "hood": "L'Eixample"
-        },
-        {
-            "hood": "Sants-Montjuic"
-        },
-        {
-            "hood": "Les Corts"
-        },
-        {
-            "hood": "Sarrià - Sant Gervasi"
-        },
-        {
-            "hood": "Gràcia"
-        },
-        {
-            "hood": "Horta - Guinardó"
-        },
-        {
-            "hood": "Nou Barris"
-        },
-        {
-            "hood": "Sant Andreu"
-        },
-        {
-            "hood": "Sant Martí"
-        }
-]
+  "areas": [
+    {
+      "hood": "Ciutat Vella"
+    },
+    {
+      "hood": "L'Eixample"
+    },
+    {
+      "hood": "Sants-Montjuic"
+    },
+    {
+      "hood": "Les Corts"
+    },
+    {
+      "hood": "Sarrià - Sant Gervasi"
+    },
+    {
+      "hood": "Gràcia"
+    },
+    {
+      "hood": "Horta - Guinardó"
+    },
+    {
+      "hood": "Nou Barris"
+    },
+    {
+      "hood": "Sant Andreu"
+    },
+    {
+      "hood": "Sant Martí"
+    }
+  ]
 }

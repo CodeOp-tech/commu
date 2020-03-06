@@ -62,29 +62,35 @@ function App() {
 
           <Route path="/">
             <ul>
-              <div class="container">
+              <div className="container">
                 <div>
                   <div
                     type="button"
-                    class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                    className="btn btn-light shadow p-3 mb-5 bg-white rounded"
                   >
                     <img
                       src="https://i.imgur.com/InarIgK.png"
                       width="200"
                       height="200"
-                      class="d-inline-block align-top"
+                      className="d-inline-block align-top"
                       alt=""
                     />
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-sm-9">
-                    <Link class="text-decoration-none text-dark" to="/signIn">
+                <div className="row">
+                  <div className="col-sm-9">
+                    <Link
+                      className="text-decoration-none text-dark"
+                      to="/signIn"
+                    >
                       Sign in
                     </Link>
                   </div>
-                  <div class="col-sm-9">
-                    <Link class="text-decoration-none text-dark" to="/signUp">
+                  <div className="col-sm-9">
+                    <Link
+                      className="text-decoration-none text-dark"
+                      to="/signUp"
+                    >
                       Join the community!
                     </Link>
                   </div>
