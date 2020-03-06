@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 export default class Favourites extends Component {
   render() {
     return (
-      <div class="container-fluid">
-        <div>
-          <Link class="text-decoration-none text-dark" to="/profile">
+      <div className="container py-4">
+        <div className="card shadow p-3 mb-5 bg-white rounded">
+          <Link className="text-decoration-none text-dark" to="/favorites">
             <button
               type="button"
               class="btn btn-light shadow p-3 mb-5 bg-white rounded"
@@ -18,7 +18,6 @@ export default class Favourites extends Component {
               />
             </button>
           </Link>
-          ADD PROFILE
         </div>
       </div>
     );

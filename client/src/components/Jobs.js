@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class Jobs extends Component {
   render() {
     return (
-      <div class="container-fluid">
+      <div class="container py-4">
         <ul>
           <div>
             <Link class="text-decoration-none text-dark" to="/post">

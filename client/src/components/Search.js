@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export default class Search extends Component {
   render() {
     return (
-      <div class="container-fluid">
+      <div class="container py-4">
         <div>
           <Link class="text-decoration-none text-dark" to="/search"></Link>
           SEARCH JOBS
