@@ -6,11 +6,6 @@ export default class Community extends Component {
     constructor(props) {
         super(props);
         this.state = {
-              // full_name: "",
-              // area_id: 0,
-              // img: "",
-              // skills: [],
-              // about: "",
               users: []
         }
     }
