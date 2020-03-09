@@ -9,11 +9,11 @@ export default class Favourites extends Component {
           <Link className="text-decoration-none text-dark" to="/favorites">
             <button
               type="button"
-              class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+              className="btn btn-light shadow p-3 mb-5 bg-white rounded"
             >
               <img
                 src="https://i.imgur.com/ux2D9Tu.png"
-                class="d-inline-block align-top"
+                className="d-inline-block align-top"
                 alt=""
               />
             </button>
