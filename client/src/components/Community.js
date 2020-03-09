@@ -26,27 +26,15 @@ export default class Community extends Component {
   };
 
   //
-  componentDidMount = () => {
-    fetch(`/users`)
-      // fetch(`/:area_id/users`) should work when we got the token that states the viewer's area
-      .then(response => response.json())
-      .then(response => {
-        this.setState({ users: response });
-      });
-  };
-  //
   render() {
     return (
-      <div class="container p-4">
-        <h3>
-          <Header />
-        </h3>
-        <div class="row pb-5">
-          <div
-            type="button"
-            class="btn btn-light shadow p-3 mb-5 bg-white rounded"
-          >
-            Community members:
+      <div>
+        <div class="container p-4">
+          <h3>
+            <Header />
+          </h3>
+          <div class="row pb-5">
+            <p>Community members:</p>
           </div>
           <div class="row py-5">
             {this.state.users.map((user, i) => {
