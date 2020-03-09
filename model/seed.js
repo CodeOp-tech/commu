@@ -56,5 +56,25 @@ data.areas.forEach(e => {
     });
 });
 //
+// JOBS INSERT
+data.jobs.forEach(e => {
+    let sql = `INSERT INTO jobs (
+        user_id,
+        title,
+        description,
+        price,
+        date_time
+    ) VALUES (
+        "${e.user_id}",
+        "${e.title}",
+        "${e.description}",
+        "${e.price}",
+        "${e.date_time}"
+    );`;
+    con.query(sql, function(err, result) {
+        if (err) throw err;
+    });
+});
+//
 con.end();
 });

@@ -30,35 +30,80 @@
     ],
 
     "areas": [
-    {
-        "hood": "Ciutat Vella"
-    },
-    {
-        "hood": "L'Eixample"
-    },
-    {
-        "hood": "Sants-Montjuic"
-    },
-    {
-        "hood": "Les Corts"
-    },
-    {
-        "hood": "Sarrià - Sant Gervasi"
-    },
-    {
-        "hood": "Gràcia"
-    },
-    {
-        "hood": "Horta - Guinardó"
-    },
-    {
-        "hood": "Nou Barris"
-    },
-    {
-        "hood": "Sant Andreu"
-    },
-    {
-        "hood": "Sant Martí"
-    }
+        {
+            "hood": "Ciutat Vella"
+        },
+        {
+            "hood": "L'Eixample"
+        },
+        {
+            "hood": "Sants-Montjuic"
+        },
+        {
+            "hood": "Les Corts"
+        },
+        {
+            "hood": "Sarrià - Sant Gervasi"
+        },
+        {
+            "hood": "Gràcia"
+        },
+        {
+            "hood": "Horta - Guinardó"
+        },
+        {
+            "hood": "Nou Barris"
+        },
+        {
+            "hood": "Sant Andreu"
+        },
+        {
+            "hood": "Sant Martí"
+        }
+    ],
+
+    "jobs": [
+        {
+            "user_id": 1,
+            "title": "Catsitter",
+            "description": "I am a cat lover. I offer reliable service including: litter changing, petting, playing, feeding, overstay if necessary.",
+            "price": "10€ / hour",
+            "date_time": "Weekdays 19:00-22:00, weekends 10:00-22:00."
+        },
+        {
+            "user_id": 1,
+            "title": "Gardener",
+            "description": "Green environment makes city life balanced. I help creating a calmer space using my knowledge about japanese gardening to help making small gardens inside small apartments.",
+            "price": "15€ / hour",
+            "date_time": "Weekends 10:00 - 14:00"
+        },
+        {
+            "user_id": 2,
+            "title": "Dog walker",
+            "description": "As I got some free time at the moment, I would like to help a neighbour with their dog walking.",
+            "price": "10€ per walk",
+            "date_time": "12.00 - 15.00 Monday to Thursday."
+        },
+        {
+            "user_id": 2,
+            "title": "Dinner workshop",
+            "description": "I love making homemade food, and I would like to share my skills with a neighbour. I offer evening workshops  where you’ll learn to be more efficient and diverse with your meals. My idea is that we can cook together as I used to do with my family. I believe this is the best way to cook in the evening and relax. Available for individuals and  small groups.",
+            "price": "30€ / session",
+            "date_time": "Tuesday & Wednesday, 19:00-21:00"
+        },
+        {
+            "user_id": 3,
+            "title": "Webpage design",
+            "description": "Need a webpage for your bussiness? Of course you need one! Nowadays if you are not on the internet you don't even exist. Contact me and make your bussiness grow in a way you've never seen before.",
+            "price": "Around 500€",
+            "date_time": "Contact me anytime."
+        },
+        {
+            "user_id": 3,
+            "title": "Looking for belly dance classes",
+            "description": "I'm looking for some place in the neighbourhood that they teach belly dancing at.",
+            "price": "Maximum 50€ per session",
+            "date_time": "Afternoons, from 18:00 onwards."
+        }
     ]
 }

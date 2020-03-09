@@ -2,6 +2,10 @@ body {
     background-color: rgba(255, 255, 255, 0.75);
 }
 
+h5 {
+    font-weight: bold;
+}
+
 span {
     font-weight: bold;
 }
