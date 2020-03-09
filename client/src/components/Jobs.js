@@ -8,6 +8,29 @@ import "./Footer.css";
 import "./Jobs.css";
 
 export default class Jobs extends Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      jobs:[]
+    };
+  }
+
+
+  componentDidMount() {
+    fetch("/jobs")
+      .then(res => res.json())
+      //   console.log(res)
+      .then(json => {
+        console.log(json);
+        this.setState({
+          jobs: json
+        });
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   render() {
     return (
       <div className="container py-4">
