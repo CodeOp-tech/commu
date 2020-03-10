@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+import "./Header.css";
+import "./Footer.css";
 
 export default class MyDetails extends Component {
   render() {
     return (
       <div className="container py-4">
+        <h3>
+          <Header />
+        </h3>
         <div className="card">
           <div className="card-img-right">
             <button
@@ -53,6 +60,9 @@ export default class MyDetails extends Component {
             </li>
           </ul>
         </div>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }
