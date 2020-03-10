@@ -5,7 +5,6 @@ import Footer from "./Footer";
 import "./Home.css";
 import "./Header.css";
 import "./Footer.css";
-
 //
 export default class Community extends Component {
   //
@@ -17,14 +16,17 @@ export default class Community extends Component {
   }
   //
   componentDidMount = () => {
-    fetch(`/users`)
+    fetch(`/users`, {
+      headers: {
+        "x-access-token": localStorage.getItem("token")
+      }
+    })
       // fetch(`/:area_id/users`) should work when we got the token that states the viewer's area
       .then(response => response.json())
       .then(response => {
         this.setState({ users: response });
       });
   };
-
   //
   render() {
     return (
@@ -41,6 +43,7 @@ export default class Community extends Component {
               return (
                 <div
                   key={i}
+                  class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex align-items-stretch pb-5"
                   class="col-lg-4 col-md-3 col-sm-4 col-6 d-flex align-items-stretch pb-5"
                 >
                   <div class="card text-center shadow">
