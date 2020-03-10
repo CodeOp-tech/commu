@@ -1,11 +1,21 @@
 body {
-    background-color: rgba(255, 255, 255, 0.75);
+  background-color: rgba(255, 255, 255, 0.75);
 }
 
 h5 {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 span {
-    font-weight: bold;
+  font-weight: bold;
+}
+.backgroundImage {
+  background-image: url("https://i.imgur.com/8NnJkZ1.jpg");
+  background-size: cover;
+  height: 1000px;
+}
+
+.enter {
+  font-family: "Comfortaa";
+  font-weight: bold;
 }

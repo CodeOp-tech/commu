@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
@@ -61,8 +62,8 @@ function App() {
           </Route>
 
           <Route path="/">
-            <ul>
-              <div className="container">
+            <ul class="backgroundImage">
+              <div className="container py-4 text-center">
                 <div>
                   <div
                     type="button"
@@ -77,22 +78,34 @@ function App() {
                     />
                   </div>
                 </div>
-                <div className="row">
-                  <div className="col-sm-9">
-                    <Link
-                      className="text-decoration-none text-dark"
-                      to="/signIn"
-                    >
-                      Sign in
-                    </Link>
-                  </div>
-                  <div className="col-sm-9">
-                    <Link
-                      className="text-decoration-none text-dark"
-                      to="/signUp"
-                    >
-                      Join the community!
-                    </Link>
+                <div className="enter">
+                  <div className="row">
+                    <div className="col-sm-12 text-center">
+                      <Link
+                        className="text-decoration-none text-dark"
+                        to="/signIn"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                        >
+                          Sign in
+                        </button>
+                      </Link>
+                    </div>
+                    <div className="col-sm-12 text-center">
+                      <Link
+                        className="text-decoration-none text-dark"
+                        to="/signUp"
+                      >
+                        <button
+                          type="button"
+                          class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                        >
+                          Join the community!
+                        </button>
+                      </Link>
+                    </div>
                   </div>
                 </div>
               </div>

@@ -1,12 +1,21 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+import "./Home.css";
+import "./Header.css";
+import "./Footer.css";
+import "./Profile.css";
 
 export default class Profile extends Component {
   render() {
     return (
       <div class="container py-4">
-        <ul>
-          <div>
+        <h3>
+          <Header />
+        </h3>
+        <p className="coverImage">
+          <div className="mydetails">
             <Link class="text-decoration-none text-dark" to="/mydetails">
               <div
                 type="button"
@@ -17,11 +26,12 @@ export default class Profile extends Component {
                   class="d-inline-block align-top"
                   alt=""
                 />
+                MY DETAILS
               </div>
             </Link>
           </div>
 
-          <div>
+          <div className="inbox">
             <Link class="text-decoration-none text-dark" to="/inbox">
               <div
                 type="button"
@@ -32,10 +42,11 @@ export default class Profile extends Component {
                   class="d-inline-block align-top"
                   alt=""
                 />
+                INBOX
               </div>
             </Link>
           </div>
-          <div>
+          <div className="favorites">
             <Link class="text-decoration-none text-dark" to="/favorites">
               <div
                 type="button"
@@ -46,10 +57,14 @@ export default class Profile extends Component {
                   class="d-inline-block align-top"
                   alt=""
                 />
+                FAVORITES
               </div>
             </Link>
           </div>
-        </ul>
+        </p>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }

@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import "./Home.css";
+import "./Header.css";
+import "./Footer.css";
 
 export default class Home extends Component {
   render() {
     return (
       <div>
-        <div class="container py-4">
-          <h1>
+        <div className="container py-4">
+          <h3>
             <Header />
-          </h1>
+          </h3>
+          <p className="coverImage"></p>
 
-          <div class="row"></div>
+          <div className="row"></div>
 
           <footer>
             <Footer />
