@@ -5,12 +5,12 @@ var jwt = require("jsonwebtoken");
 var userMustBeLogged = require("../guards/userMustBeLogged");
 //
 // GET ALL
-router.get("/", (req, res) => {
-  db("SELECT * FROM users;")
-    .then(results => {
-      res.send(results.data);
-    })
-    .catch(err => res.status(500).send(err));
+router.get("/", userMustBeLogged, (req, res) => {
+  db(
+    `SELECT * FROM users WHERE area_id = ${req.area_id} AND id != ${req.user_id}`
+  ).then(results => {
+    res.send(results.data);
+  });
 });
 //
 // GET user's profile by id
