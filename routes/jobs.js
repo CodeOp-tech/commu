@@ -7,11 +7,7 @@ var userMustBeLogged = require("../guards/userMustBeLogged");
 // router.get("/", (req, res) => {
 //   db("SELECT * FROM jobs;")
 //     .then(results => {
-<<<<<<< HEAD
 //       res.send(results.data);
-=======
-//         res.send(results.data);
->>>>>>> search jobs at 90%
 //     })
 //     .catch(err => res.status(500).send(err));
 // });
