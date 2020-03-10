@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+
 import Header from "./Header";
 import Footer from "./Footer";
 import "./Header.css";
@@ -13,6 +13,9 @@ export default class MyDetails extends Component {
       full_name: "",
       email: "",
       password: "",
+      about: "",
+      img: "",
+      skills: "",
       selectedId: 0,
       users: [],
       areas: []
@@ -65,6 +68,16 @@ export default class MyDetails extends Component {
       password: e.target.value
     });
   };
+  handleSkills = e => {
+    this.setState({
+      skills: e.target.value
+    });
+  };
+  handleAbout = e => {
+    this.setState({
+      about: e.target.value
+    });
+  };
 
   handleName = e => {
     this.setState({
@@ -72,7 +85,19 @@ export default class MyDetails extends Component {
     });
   };
 
-  submitChanges = () => {};
+  submitChanges = () => {
+    // axios
+    //   .put(`/users/profile`, {
+    //     "x-access-token": localStorage.getItem("token")
+    //   })
+
+    //   .then(res => {
+    //     console.log(results);
+    //     this.setState({
+    //       users: results
+    //     });
+    //   });
+  };
 
   render() {
     return (
@@ -89,13 +114,13 @@ export default class MyDetails extends Component {
                   <img
                     className="d-inline-block align-top"
                     src={user.img}
-                    alt="Card image cap"
+                    alt="selfportrait"
                   />
                 </div>
 
                 <div className="list-group-item">{user.full_name}</div>
 
-                <div className="list-group-item">{user.description}</div>
+                <div className="list-group-item">{user.about}</div>
 
                 <div className="list-group-item">{user.skills}</div>
               </div>
@@ -148,7 +173,7 @@ export default class MyDetails extends Component {
                     id="exampleFormControlInput1"
                     placeholder="John Johnny"
                   />
-                  <label for="exampleFormControlInput1">Email address</label>
+                  <label for="exampleFormControlInput2">Email address</label>
                   <input
                     onChange={this.handleEmail}
                     value={this.state.email}
@@ -157,7 +182,7 @@ export default class MyDetails extends Component {
                     id="exampleFormControlInput1"
                     placeholder="name@example.com"
                   />
-                  <label for="exampleFormControlInput1">Password</label>
+                  <label for="exampleFormControlInput3">Password</label>
                   <input
                     onChange={this.handlePassword}
                     value={this.state.password}
@@ -166,14 +191,23 @@ export default class MyDetails extends Component {
                     id="exampleFormControlInput1"
                     placeholder="******"
                   />
-                  <label for="exampleFormControlInput1">Description</label>
-                  <input
-                    onChange={this.handleDescription}
-                    value={this.state.description}
-                    type="password"
+                  <label for="exampleFormControlInput4">About</label>
+                  <textarea
+                    onChange={this.handleAbout}
+                    value={this.state.about}
+                    type="text"
                     class="form-control"
                     id="exampleFormControlInput1"
-                    placeholder="******"
+                    placeholder="about you"
+                  />
+                  <label for="exampleFormControlInput5">Skills</label>
+                  <textarea
+                    onChange={this.handleSkills}
+                    value={this.state.skills}
+                    type="text"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="skills"
                   />
                 </div>
                 <div class="form-group">
@@ -204,7 +238,7 @@ export default class MyDetails extends Component {
                 <button
                   type="button"
                   class="btn btn-primary"
-                  onClick={this.submitProfile}
+                  onClick={this.submitChanges}
                 >
                   Save changes
                 </button>
