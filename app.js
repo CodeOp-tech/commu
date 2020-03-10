@@ -9,7 +9,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var jobsRouter = require("./routes/jobs");
 var areasRouter = require("./routes/areas");
-var communityRouter = require("./routes/community");
+
 //--------------------------------------------------
 //
 var app = express();
@@ -25,7 +25,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/jobs", jobsRouter);
 app.use("/areas", areasRouter);
-app.use("/community", communityRouter);
+
 // -------------------------------------------------
 //
 // catch 404 and forward to error handler

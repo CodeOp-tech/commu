@@ -26,6 +26,24 @@
             "img": "https://ca.slack-edge.com/TQUM4SE2J-URF6U0A85-76a2d466b715-512",
             "skills": ["Fashion", " Fitness", " Full-stack development"],
             "about": "^_^ Hey! I'm Daena, a Spanish 34yo transgender girl that has recently learnt how to properly code (a full-stack developer, so we're called!). I also like fashion, videogames and fitness. Message me if you are interested in my skills!"
+        },
+        {
+            "full_name": "Beth Collins",
+            "email": "beth@commu.com",
+            "password": "root",
+            "area_id": 1,
+            "img": "https://ca.slack-edge.com/TQUM4SE2J-URU7WF4P8-2c5dfce49690-512",
+            "skills": ["Nutrition", "Teacher", " Full-stack development"],
+            "about": "Beth here. Nice to meet you guys!"
+        },
+        {
+            "full_name": "Emefa",
+            "email": "emefa@commu.com",
+            "password": "root",
+            "area_id": 1,
+            "img": "https://ca.slack-edge.com/TQUM4SE2J-UQJH2BMJ5-78fa07925e0b-512",
+            "skills": ["Git", "Teacher"],
+            "about": "I'm Emefa, and it's nice to meet you."
         }
     ],
 
@@ -104,6 +122,19 @@
             "description": "I'm looking for some place in the neighbourhood that they teach belly dancing at.",
             "price": "Maximum 50€ per session",
             "date_time": "Afternoons, from 18:00 onwards."
+        },
+        {
+            "user_id": 5,
+            "title": "English teacher",
+            "description": "Native english speaker with teaching experience.For more details please message me",
+            "price": "15€ / hour",
+            "date_time": "Monday and Thursday 18:00-20:00 "
+        }, {
+            "user_id": 4,
+            "title": "Yoga teacher",
+            "description": " I offer yoga classes customised to the client's needs.",
+            "price": "20 euros/hour",
+            "date_time": "Weekdays 18:00-19:30, weekends 09:00-11:00."
         }
     ]
 }
