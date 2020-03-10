@@ -16,9 +16,9 @@ router.get("/", userMustBeLogged, (req, res) => {
 // GET user's profile by id
 router.get("/profile", userMustBeLogged, (req, res) => {
   db(`SELECT * FROM users WHERE id = ${req.user_id}`).then(results => {
-    res.send({
-      data: results.data
-    });
+    res.send(
+       results.data
+    );
   });
 });
 
