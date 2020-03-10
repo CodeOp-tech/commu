@@ -114,20 +114,7 @@ export default class SignUp extends Component {
             />
           </div>
           <div class="form-group">
-            <select
-              class="form-control"
-              id="exampleFormControlSelect1"
-              onChange={this.getAreaId}
-            >
-              <option>Choose an area</option>
-              {this.state.areas.map((area, index) => {
-                return (
-                  <option key={index} value={area.id}>
-                    {area.hood}
-                  </option>
-                );
-              })}
-            </select>
+           
             {/* <button
             type="button"
             class="btn btn-dark"
