@@ -26,15 +26,6 @@ export default class Community extends Component {
   };
 
   //
-  componentDidMount = () => {
-    fetch(`/users`)
-      // fetch(`/:area_id/users`) should work when we got the token that states the viewer's area
-      .then(response => response.json())
-      .then(response => {
-        this.setState({ users: response });
-      });
-  };
-  //
   render() {
     return (
       <div class="container p-4">
