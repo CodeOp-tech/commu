@@ -41,7 +41,7 @@ export default class Community extends Component {
               return (
                 <div
                   key={i}
-                  class="col-lg-2 col-md-3 col-sm-4 col-6 d-flex align-items-stretch pb-5"
+                  class="col-lg-4 col-md-3 col-sm-4 col-6 d-flex align-items-stretch pb-5"
                 >
                   <div class="card text-center shadow">
                     <img src={user.img} class="card-img-top" alt="..." />

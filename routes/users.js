@@ -2,6 +2,7 @@ var express = require("express");
 var router = express.Router();
 var db = require("../model/helper");
 var jwt = require("jsonwebtoken");
+var userMustBeLogged = require("../guards/userMustBeLogged");
 //
 // GET ALL
 router.get("/", (req, res) => {
@@ -13,23 +14,12 @@ router.get("/", (req, res) => {
 });
 //
 // GET user's profile by id
-router.get("/profile", (req, res) => {
-  const token = req.headers["x-access-token"];
-  if (!token) res.status(401).send({ msg: "Please provide a token." });
-  else {
-    jwt.verify(token, "cheese", function(err, decoded) {
-      if (err) res.status(401).send({ msg: "Please provide a valid token" });
-      else {
-        db(`SELECT * FROM users WHERE id = ${decoded.user_id} `).then(
-          results => {
-            res.send({
-              msg: "here is your protected data"
-            });
-          }
-        );
-      }
+router.get("/profile", userMustBeLogged, (req, res) => {
+  db(`SELECT * FROM users WHERE id = ${req.user_id}`).then(results => {
+    res.send({
+      data: results.data
     });
-  }
+  });
 });
 
 //
