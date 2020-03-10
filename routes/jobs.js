@@ -7,7 +7,11 @@ var userMustBeLogged = require("../guards/userMustBeLogged");
 // router.get("/", (req, res) => {
 //   db("SELECT * FROM jobs;")
 //     .then(results => {
+<<<<<<< HEAD
 //       res.send(results.data);
+=======
+//         res.send(results.data);
+>>>>>>> search jobs at 90%
 //     })
 //     .catch(err => res.status(500).send(err));
 // });
@@ -106,5 +110,14 @@ router.get("/:user_id", async function(req, res) {
   }
   res.send(results.data);
 });
+//
+// SEARCH METHOD
+router.get("/search", (req, res) => {
+    db(`SELECT * FROM jobs WHERE title LIKE "%${req.query.q}%" OR description LIKE "%${req.query.q}%";`)
+        .then(results => {
+            res.send(results.data);
+        })
+        .catch(err => res.status(500).send(err));
+    });
 //
 module.exports = router;
