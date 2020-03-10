@@ -1,10 +1,17 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Header from "./Header";
+import Footer from "./Footer";
+import "./Header.css";
+import "./Footer.css";
 
 export default class Inbox extends Component {
   render() {
     return (
       <div className="container py-4">
+        <h3>
+          <Header />
+        </h3>
         <nav id="sidebar">
           <div className="sidebar-header">
             <h3>
@@ -81,6 +88,9 @@ export default class Inbox extends Component {
             </div>
           </ul>
         </nav>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }
