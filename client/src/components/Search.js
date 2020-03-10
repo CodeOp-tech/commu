@@ -1,9 +1,5 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Header from "./Header";
-import Footer from "./Footer";
-import "./Header.css";
-import "./Footer.css";
 
 export default class Search extends Component {
   //
@@ -15,8 +11,12 @@ export default class Search extends Component {
   }
   //
   componentDidMount = () => {
-    fetch(`/jobs`)
-      // fetch(`/:area_id/jobs`) should work when we got the token that states the viewer's area
+    fetch(`/jobs`, {
+      headers: {
+        "x-access-token": localStorage.getItem("token")
+      }
+    })
+      // fetch(`/:area_id/users`) should work when we got the token that states the viewer's area
       .then(response => response.json())
       .then(response => {
         this.setState({ jobs: response });
@@ -25,17 +25,9 @@ export default class Search extends Component {
   ////
   render() {
     return (
-      <div class="container py-4">
-        <h3>
-          <Header />
-        </h3>
+      <div class="container-fluid p-5">
         <div class="row">
-          <div
-            type="button"
-            class="btn btn-light shadow p-3 mb-5 bg-white rounded"
-          >
-            Job posted:
-          </div>
+          <h1>Jobs posted:</h1>
           <div class="row">
             {this.state.jobs.map((job, i) => {
               return (
@@ -84,9 +76,6 @@ export default class Search extends Component {
             })}
           </div>
         </div>
-        <footer>
-          <Footer />
-        </footer>
       </div>
     );
   }

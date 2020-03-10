@@ -21,9 +21,7 @@ function App() {
         <Switch>
           <Route path="/signIn" component={SignIn} />
 
-          <Route path="/signUp" component={SignUp}>
-            <SignUp />
-          </Route>
+          <Route path="/signUp" component={SignUp} />
 
           <Route path="/home" component={Home}>
             <Home />
