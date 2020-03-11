@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 
-
 import axios from "axios";
 
 export default class SignUp extends Component {
@@ -10,7 +9,7 @@ export default class SignUp extends Component {
       full_name: "",
       email: "",
       password: "",
-      selectedId: 0,
+      area_Id: 0,
       users: [],
       areas: []
     };
@@ -41,7 +40,7 @@ export default class SignUp extends Component {
 
   getAreaId = e => {
     this.setState({
-      selectedId: e.target.value
+      area_Id: e.target.value
     });
   };
 
@@ -55,7 +54,7 @@ export default class SignUp extends Component {
         full_name: this.state.full_name,
         email: this.state.email,
         password: this.state.password,
-        area_id: this.state.selectedId
+        area_id: this.state.area_id
       }
     })
       .then(results => {
@@ -111,9 +110,25 @@ export default class SignUp extends Component {
               id="exampleFormControlInput1"
               placeholder="******"
             />
+            <label for="exampleFormControlInput1">
+              Choose your neighborhood
+            </label>
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              onChange={this.getAreaId}
+            >
+              <option>Choose an area</option>
+              {this.state.areas.map((area, i) => {
+                return (
+                  <option key={i} value={area.id}>
+                    {area.hood}
+                  </option>
+                );
+              })}
+            </select>
           </div>
           <div class="form-group">
-           
             {/* <button
             type="button"
             class="btn btn-dark"
