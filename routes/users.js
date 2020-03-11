@@ -16,9 +16,8 @@ router.get("/", userMustBeLogged, (req, res) => {
 // GET user's profile by id
 router.get("/profile", userMustBeLogged, (req, res) => {
   db(`SELECT * FROM users WHERE id = ${req.user_id}`).then(results => {
-    res.send({
-      data: results.data
-    });
+    delete results.data[0].password;
+    res.send(results.data[0]);
   });
 });
 
@@ -81,19 +80,21 @@ router.post("/login", function(req, res, next) {
 //
 
 // UPDATE THE DATABASE
-router.put("/:id", (req, res) => {
+router.put("/profile", userMustBeLogged, (req, res) => {
   db(`UPDATE users SET
   full_name = "${req.body.full_name}",
   email = "${req.body.email}",
   password = "${req.body.password}",
   area_id = "${req.body.area_id}",
-  skills = "${req.body.skils}",
+  img = "${req.body.img}",
+  skills = "${req.body.skills}",
   about = "${req.body.about}"
-  );`)
+  WHERE id= ${req.user_id}`)
     .then(results => {
-      db(`SELECT * FROM users ORDER BY id ASC;`)
+      db(`SELECT * FROM users WHERE id= ${req.user_id};`)
         .then(results => {
-          res.send(results.data);
+          delete results.data[0].password;
+          res.send(results.data[0]);
         })
         .catch(err => res.status(500).send(err));
     })
