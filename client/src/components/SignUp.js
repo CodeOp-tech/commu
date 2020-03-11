@@ -76,12 +76,18 @@ export default class SignUp extends Component {
       })
       .catch(err => console.log(err));
   }
+  // const { register, errors, handleSubmit } = useForm();
+  // const onSubmit = data => {
+  //   alert(JSON.stringify(data));
+  // };
+  // console.log(errors);
+ 
 
   render() {
     return (
       <div>
         <h1>Create account</h1>
-        <form>
+        <form >
           <div class="form-group">
             <label for="exampleFormControlInput1">Full name</label>
             <input
@@ -91,6 +97,7 @@ export default class SignUp extends Component {
               class="form-control"
               id="exampleFormControlInput1"
               placeholder="John Johnny"
+              // ref={register}
             />
             <label for="exampleFormControlInput1">Email address</label>
             <input
@@ -100,6 +107,7 @@ export default class SignUp extends Component {
               class="form-control"
               id="exampleFormControlInput1"
               placeholder="name@example.com"
+              // ref={register}
             />
             <label for="exampleFormControlInput1">Password</label>
             <input
@@ -109,6 +117,7 @@ export default class SignUp extends Component {
               class="form-control"
               id="exampleFormControlInput1"
               placeholder="******"
+              // ref={register}
             />
             <label for="exampleFormControlInput1">
               Choose your neighborhood
@@ -117,6 +126,7 @@ export default class SignUp extends Component {
               class="form-control"
               id="exampleFormControlSelect1"
               onChange={this.getAreaId}
+              // ref={register}
             >
               <option>Choose an area</option>
               {this.state.areas.map((area, i) => {
