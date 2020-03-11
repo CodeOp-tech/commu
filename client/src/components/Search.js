@@ -7,7 +7,8 @@ export default class Search extends Component {
     super(props);
     this.state = {
       input: "",
-      jobs: []
+      jobs: [],
+      users: []
     };
   }
   //
@@ -20,8 +21,19 @@ export default class Search extends Component {
       .then(response => response.json())
       .then(response => {
         this.setState({ jobs: response });
+      })
+    .then (function(data) {
+    fetch(`/users/profile`, {
+      headers: {
+        "x-access-token": localStorage.getItem("token")
+      }
+    })
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ users: response });
       });
-  };
+    })
+  }
 //
   updateInput(e) {
     this.setState({
@@ -96,10 +108,63 @@ export default class Search extends Component {
                       <div class="card-footer p-3">
                         <div class="row">
                           <div class="col-6">
-                            <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
-                              Profile
-                            </button>
-                              {/* we need a modal window that shows the profile here */}
+{/* MODAL ------------------------------------------------------------------------------------------------ */}
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-toggle="modal"
+          data-target="#exampleModalCenter"
+        >
+          Profile
+        </button>
+
+        {/* <!-- Modal --> */}
+        <div
+          class="modal fade"
+          id="exampleModalCenter"
+          tabindex="-1"
+          role="dialog"
+          aria-labelledby="exampleModalCenterTitle"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalCenterTitle">
+                  Your details
+                </h5>
+                <button
+                  type="button"
+                  class="close"
+                  data-dismiss="modal"
+                  aria-label="Close"
+                >
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+{/* INSERT PROFILE CARD HERE ---------------------------------------------------------------------- */}
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onClick={this.submitChanges}
+                >
+                  Save changes
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+{/* END OF MODAL ---------------------------------------------------------------------------------------- */}
                           </div>
                           <div class="col-6">
                             <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
