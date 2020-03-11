@@ -22,17 +22,17 @@ export default class Search extends Component {
       .then(response => {
         this.setState({ jobs: response });
       })
-    .then (function(data) {
-    fetch(`/users/profile`, {
-      headers: {
-        "x-access-token": localStorage.getItem("token")
-      }
-    })
-      .then(response => response.json())
-      .then(response => {
-        this.setState({ users: response });
-      });
-    })
+    // .then (function = () => {
+    // fetch(`/users`, {
+    //   headers: {
+    //     "x-access-token": localStorage.getItem("token")
+    //   }
+    // })
+    //   .then(response => response.json())
+    //   .then(response => {
+    //     this.setState({ users: response });
+    //   });
+    // })
   }
 //
   updateInput(e) {
