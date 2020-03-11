@@ -21,7 +21,6 @@ router.get("/:id", (req, res) => {
     .catch(err => res.status(500).send(err));
 });
 //
-
 // GET JOBS BY AREA
 router.get("/", userMustBeLogged, (req, res) => {
   let query = `SELECT * FROM jobs LEFT JOIN users
@@ -33,7 +32,7 @@ router.get("/", userMustBeLogged, (req, res) => {
 });
 //
 // POST INTO DATABASE
-router.post("/", (req, res) => {
+router.post("/", userMustBeLogged,(req, res) => {
   db(
     `INSERT INTO jobs (
         user_id,
@@ -43,12 +42,12 @@ router.post("/", (req, res) => {
         date_time
 
         ) VALUES (
-        "${req.body.user_id}",
+        "${req.user_id}",
         "${req.body.title}",
         "${req.body.description}",
         "${req.body.price}",
-        "${req.body.date_time}",
-        ");`
+        "${req.body.date_time}"
+        );`
   )
     .then(results => {
       db("SELECT * FROM jobs ORDER BY id ASC;")
