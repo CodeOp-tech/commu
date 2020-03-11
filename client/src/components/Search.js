@@ -6,6 +6,7 @@ export default class Search extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      input: "",
       jobs: []
     };
   }
@@ -16,19 +17,64 @@ export default class Search extends Component {
         "x-access-token": localStorage.getItem("token")
       }
     })
-      // fetch(`/:area_id/users`) should work when we got the token that states the viewer's area
       .then(response => response.json())
       .then(response => {
         this.setState({ jobs: response });
       });
   };
-  ////
+//
+  updateInput(e) {
+    this.setState({
+      input: e.target.value
+    });
+  }
+//
+  searchJobs = () => {
+  fetch(`/jobs/search?q=${this.state.input}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json"
+    }
+  })
+    .then(res => res.json())
+    .then(res => {
+      this.setState({jobs: res, input: "" });
+    })
+    .catch(error => {
+      console.log(error);
+    });
+  }
+  //
   render() {
     return (
       <div class="container-fluid p-5">
         <div class="row">
-          <h1>Jobs posted:</h1>
-          <div class="row">
+          <div class="col-md-6 col-sm-12">
+            <h1>Jobs in your area:</h1>
+          </div>
+          <div class="col-md-6 col-sm-12">
+            <div
+                  type="button"
+                  class="btn btn-light shadow p-3 mr-5 bg-white rounded input-group-prepend"
+                >
+                  <img
+                    src="https://i.imgur.com/fgnMByB.png"
+                    class="d-inline-block align-top p-2 pr-4"
+                    alt=""
+                  />
+                  <input type="text" class="form-control" placeholder="Search..."
+                  onChange={e => this.updateInput(e)}
+                  onKeyPress={event => {
+                    if (event.key === 'Enter') {
+                      this.searchJobs()}}}
+                  value={this.state.input}></input>
+                  <button type="button" class="btn btn-primary shadow ml-3"
+                  onClick={e => this.searchJobs()}>
+                    SEARCH
+                  </button>
+            </div>
+          </div>
+          <div class="row mx-auto">
             {this.state.jobs.map((job, i) => {
               return (
                 <div

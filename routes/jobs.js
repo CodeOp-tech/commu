@@ -3,14 +3,14 @@ var router = express.Router();
 var db = require("../model/helper");
 var userMustBeLogged = require("../guards/userMustBeLogged");
 //
-// GET ALL
-// router.get("/", (req, res) => {
-//   db("SELECT * FROM jobs;")
-//     .then(results => {
-//       res.send(results.data);
-//     })
-//     .catch(err => res.status(500).send(err));
-// });
+// SEARCH JOBS METHOD
+router.get("/search", (req, res) => {
+  db(`SELECT * FROM jobs WHERE title LIKE "%${req.query.q}%" OR description LIKE "%${req.query.q}%";`)
+      .then(results => {
+          res.send(results.data);
+      })
+      .catch(err => res.status(500).send(err));
+  });
 //
 // GET ID
 router.get("/:id", (req, res) => {
@@ -22,7 +22,7 @@ router.get("/:id", (req, res) => {
 });
 //
 
-// Get jobs by area_id
+// GET JOBS BY AREA
 router.get("/", userMustBeLogged, (req, res) => {
   let query = `SELECT * FROM jobs LEFT JOIN users
     ON users.id = jobs.user_id WHERE area_id = ${req.area_id} AND user_id != ${req.user_id}`;
@@ -31,7 +31,7 @@ router.get("/", userMustBeLogged, (req, res) => {
     res.send(results.data);
   });
 });
-
+//
 // POST INTO DATABASE
 router.post("/", (req, res) => {
   db(
@@ -104,16 +104,7 @@ router.get("/:user_id", async function(req, res) {
   if (results.error) {
     res.send(results.error);
   }
-  res.send(results.data);
+    res.send(results.data);
 });
-//
-// SEARCH METHOD
-router.get("/search", (req, res) => {
-    db(`SELECT * FROM jobs WHERE title LIKE "%${req.query.q}%" OR description LIKE "%${req.query.q}%";`)
-        .then(results => {
-            res.send(results.data);
-        })
-        .catch(err => res.status(500).send(err));
-    });
 //
 module.exports = router;
