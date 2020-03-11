@@ -15,7 +15,18 @@ export default class Jobs extends Component {
     };
   }
 
-
+  componentDidMount = () => {
+    fetch(`/jobs`, {
+      headers: {
+        "x-access-token": localStorage.getItem("token")
+      }
+    })
+      .then(response => response.json())
+      .then(response => {
+        this.setState({ users: response });
+      });
+  };
+  //
 
 
   render() {

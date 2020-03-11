@@ -20,7 +20,6 @@ export default class Community extends Component {
         "x-access-token": localStorage.getItem("token")
       }
     })
-      // fetch(`/:area_id/users`) should work when we got the token that states the viewer's area
       .then(response => response.json())
       .then(response => {
         this.setState({ users: response });

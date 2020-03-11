@@ -74,12 +74,12 @@ export default class Search extends Component {
                   </button>
             </div>
           </div>
-          <div class="row mx-auto">
+          <div class="row mx-auto text-center w-100">
             {this.state.jobs.map((job, i) => {
               return (
                 <div
                   key={i}
-                  class="col-12 col-md-6 d-flex align-items-stretch pt-5"
+                  class="col-12 col-md-6 d-flex align-items-stretch pt-4 mx-auto text-center w-100"
                 >
                   <div class="card text-center shadow">
                     <div class="card-body d-flex flex-column">
@@ -92,26 +92,20 @@ export default class Search extends Component {
                           </div>
                           <div class="col-6">{job.date_time}</div>
                         </div>
-                        <div class="card-footer p-3">
-                          <div class="row">
-                            <div class="col-6">
-                              <button
-                                type="button"
-                                class="btn btn-light shadow m-5 p-2 bg-white rounded mt-auto"
-                              >
-                                Profile
-                              </button>
+                      </div>
+                      <div class="card-footer p-3">
+                        <div class="row">
+                          <div class="col-6">
+                            <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
+                              Profile
+                            </button>
                               {/* we need a modal window that shows the profile here */}
-                            </div>
-                            <div class="col-6">
-                              <button
-                                type="button"
-                                class="btn btn-light shadow m-5 p-2 bg-white rounded mt-auto"
-                              >
+                          </div>
+                          <div class="col-6">
+                            <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
                                 Message
-                              </button>
+                            </button>
                               {/* we need to conect the Pusher chatApp to this button*/}
-                            </div>
                           </div>
                         </div>
                       </div>
