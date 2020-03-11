@@ -16,8 +16,8 @@ export default class MyDetails extends Component {
       about: "",
       img: "",
       skills: "",
-      selectedId: 0,
-      users: [],
+      area_id: 0,
+      user: {},
       areas: []
     };
   }
@@ -31,7 +31,9 @@ export default class MyDetails extends Component {
       // fetch(`/:area_id/users`) should work when we got the token that states the viewer's area
       .then(response => response.json())
       .then(response => {
-        this.setState({ users: response });
+        this.setState({ user: response });
+
+        this.setState({ ...response });
       });
   };
 
@@ -85,21 +87,47 @@ export default class MyDetails extends Component {
     });
   };
 
-  submitChanges = () => {
-    // axios
-    //   .put(`/users/profile`, {
-    //     "x-access-token": localStorage.getItem("token")
-    //   })
+  handleImg = e => {
+    this.setState({
+      img: e.target.value
+    });
+  };
 
-    //   .then(res => {
-    //     console.log(results);
-    //     this.setState({
-    //       users: results
-    //     });
-    //   });
+  handleArea = e => {
+    this.setState({
+      area_id: e.target.value
+    });
+  };
+
+  submitChanges = () => {
+    axios
+      .put(
+        "/users/profile",
+        {
+          full_name: this.state.full_name,
+          email: this.state.email,
+          password: this.state.password,
+          about: this.state.about,
+          skills: this.state.skills,
+          img: this.state.img,
+          area_id: this.state.area_id
+        },
+        {
+          headers: {
+            "x-access-token": localStorage.getItem("token")
+          }
+        }
+      )
+      .then(results => {
+        this.setState({
+          user: results.data
+        });
+      })
+      .catch(err => console.log(err));
   };
 
   render() {
+    let user = this.state.user;
     return (
       <div className="container py-4">
         <header>
@@ -107,25 +135,21 @@ export default class MyDetails extends Component {
         </header>
 
         <div className="card">
-          {this.state.users.map((user, i) => {
-            return (
-              <div>
-                <div className="card-img-right" key={i}>
-                  <img
-                    className="d-inline-block align-top"
-                    src={user.img}
-                    alt="selfportrait"
-                  />
-                </div>
+          <div>
+            <div className="card-img-right">
+              <img
+                className="d-inline-block align-top"
+                src={user.img}
+                alt="selfportrait"
+              />
+            </div>
 
-                <div className="list-group-item">{user.full_name}</div>
+            <div className="list-group-item">{user.full_name}</div>
 
-                <div className="list-group-item">{user.about}</div>
+            <div className="list-group-item">{user.about}</div>
 
-                <div className="list-group-item">{user.skills}</div>
-              </div>
-            );
-          })}
+            <div className="list-group-item">{user.skills}</div>
+          </div>
         </div>
 
         {/* <!-- Button trigger modal --> */}
@@ -191,7 +215,16 @@ export default class MyDetails extends Component {
                     id="exampleFormControlInput1"
                     placeholder="******"
                   />
-                  <label for="exampleFormControlInput4">About</label>
+                  <label for="exampleFormControlInput4">Image</label>
+                  <input
+                    onChange={this.handleImg}
+                    value={this.state.img}
+                    type="url"
+                    class="form-control"
+                    id="exampleFormControlInput1"
+                    placeholder="img.url"
+                  />
+                  <label for="exampleFormControlInput5">About</label>
                   <textarea
                     onChange={this.handleAbout}
                     value={this.state.about}
@@ -200,7 +233,7 @@ export default class MyDetails extends Component {
                     id="exampleFormControlInput1"
                     placeholder="about you"
                   />
-                  <label for="exampleFormControlInput5">Skills</label>
+                  <label for="exampleFormControlInput6">Skills</label>
                   <textarea
                     onChange={this.handleSkills}
                     value={this.state.skills}
@@ -214,7 +247,8 @@ export default class MyDetails extends Component {
                   <select
                     class="form-control"
                     id="exampleFormControlSelect1"
-                    onChange={this.getAreas}
+                    onChange={this.handleArea}
+                    value={this.state.area_id}
                   >
                     <option>Choose an area</option>
                     {this.state.areas.map((area, i) => {
