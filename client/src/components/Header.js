@@ -15,13 +15,15 @@ export default class Header extends Component {
                 className="btn btn-light shadow p-3 mb-5 bg-white rounded"
               >
                 <Link to="/home">
-                <img
+                  
+                  <p>Commu</p>
+                  {/* <img
                   src="https://i.imgur.com/InarIgK.png"
                   width="100"
                   height="100"
                   className="d-inline-block align-top"
                   alt=""
-                />
+                /> */}
                 </Link>
               </div>
             </div>

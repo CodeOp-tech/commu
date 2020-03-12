@@ -17,3 +17,7 @@
 .jobs {
   font-weight: bold;
 }
+p {
+  text-decoration: none;
+  color: black;
+}
