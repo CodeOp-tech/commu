@@ -21,7 +21,8 @@ export default class Home extends Component {
           </p>
           </h1>
           <div className="hero">
-            Hello Neighbour, Come on in!
+            <p>Hello Neighbour,</p> 
+            <p>Come on in!</p>
           </div>
           <h2>Here are some of your neighbours' stories</h2>
           <div className="member1">

@@ -3,11 +3,18 @@ body {
   max-width: auto;
   font-family: 'Comfortaa', cursive;
 }
-/* .hero {
-  height: 100px;
-} */
+.hero {
+  height: 300px;
+}
 
 img {
   max-width: 200px;
   padding-bottom: 20px;
+}
+.hero{
+  font-size: 75px;
+  
+}
+.hero p{ 
+  color:#F48450;
 }
