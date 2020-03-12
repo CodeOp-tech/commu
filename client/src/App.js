@@ -13,6 +13,7 @@ import Inbox from "./components/Inbox";
 import Favorites from "./components/Favorites";
 import Search from "./components/Search";
 import Post from "./components/Post";
+import Chat from "./components/Chat";
 
 function App() {
   return (
@@ -58,6 +59,16 @@ function App() {
           <Route path="/post" component={Post}>
             <Post />
           </Route>
+
+          <Route path="/chat" component={Chat}>
+            <Chat />
+          </Route>
+
+          {/* <Route path="/">
+            <Link to="/chat/1/2" className="btn btn-info">
+              Open chat window
+            </Link>
+          </Route> */}
 
           <Route path="/">
             <ul class="backgroundImage">

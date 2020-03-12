@@ -73,7 +73,11 @@ router.post("/login", function(req, res, next) {
         },
         "cheese"
       );
-      res.send({ msg: "Login successful!", token });
+      res.send({
+        msg: "Login successful!",
+        token,
+        user_id: results.data[0].id
+      });
     } else res.status(400).send({ msg: "Login not successful" });
   });
 });

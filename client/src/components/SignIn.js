@@ -25,6 +25,7 @@ export default class SignIn extends Component {
     })
       .then(results => {
         localStorage.setItem("token", results.data.token);
+        localStorage.setItem("user_id", results.data.user_id);
         //redirect after successful login
         this.props.history.push("/home");
       })
