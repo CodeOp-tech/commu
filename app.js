@@ -9,6 +9,7 @@ var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var jobsRouter = require("./routes/jobs");
 var areasRouter = require("./routes/areas");
+var chatRouter = require("./routes/chat");
 
 //--------------------------------------------------
 //
@@ -25,6 +26,7 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/jobs", jobsRouter);
 app.use("/areas", areasRouter);
+app.use("/chat", chatRouter);
 
 // -------------------------------------------------
 //
