@@ -88,6 +88,20 @@ con.connect(function(err) {
     console.log("Table creation `ratings` was successful!");
     console.log("Closing...");
   });
+  // CHAT
+  sql = `DROP TABLE if exists chat; CREATE TABLE chat(
+    id INT NOT NULL AUTO_INCREMENT,
+    text varchar(500) NOT NULL,
+    sender_id INT NOT NULL,
+    receiver_id INT NOT NULL,
+    PRIMARY KEY (id)
+);`;
+  con.query(sql, function(err, result) {
+    if (err) throw err;
+    console.log("Table creation `chat` was successful!");
+    console.log("Closing...");
+  });
+
   //
   con.end();
 });

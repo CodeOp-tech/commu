@@ -64,6 +64,18 @@ function App() {
             <Chat />
           </Route>
 
+          <Route path="/chat/:sender">
+            <div className="row h-100 border rounded bg-white shadow">
+              <div className="col-3 px-0 ">
+                <Chat />
+              </div>
+              <div className="col-9 px-0 border-left">
+                <Route path="/chat/:receiver">
+                  <Chat />
+                </Route>
+              </div>
+            </div>
+          </Route>
           {/* <Route path="/">
             <Link to="/chat/1/2" className="btn btn-info">
               Open chat window
