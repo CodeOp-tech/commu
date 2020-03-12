@@ -14,6 +14,7 @@ export default class Header extends Component {
                 type="button"
                 className="btn btn-light shadow p-3 mb-5 bg-white rounded"
               >
+                <Link to="/home">
                 <img
                   src="https://i.imgur.com/InarIgK.png"
                   width="100"
@@ -21,6 +22,7 @@ export default class Header extends Component {
                   className="d-inline-block align-top"
                   alt=""
                 />
+                </Link>
               </div>
             </div>
             <div className="nav-item mx-auto profile">

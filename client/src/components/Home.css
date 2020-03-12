@@ -1,5 +1,13 @@
-.coverImage {
-  background-image: url("https://i.imgur.com/rvQ5xbi.jpg");
-  background-size: cover;
-  height: 800px;
+body {
+  background-color: #f7f4f4;
+  max-width: auto;
+  font-family: 'Comfortaa', cursive;
+}
+/* .hero {
+  height: 100px;
+} */
+
+img {
+  max-width: 200px;
+  padding-bottom: 20px;
 }
