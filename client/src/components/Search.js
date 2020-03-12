@@ -8,7 +8,7 @@ export default class Search extends Component {
     this.state = {
       input: "",
       jobs: [],
-      users: []
+      job: {}
     };
   }
   //
@@ -21,19 +21,8 @@ export default class Search extends Component {
       .then(response => response.json())
       .then(response => {
         this.setState({ jobs: response });
-      })
-    // .then (function = () => {
-    // fetch(`/users`, {
-    //   headers: {
-    //     "x-access-token": localStorage.getItem("token")
-    //   }
-    // })
-    //   .then(response => response.json())
-    //   .then(response => {
-    //     this.setState({ users: response });
-    //   });
-    // })
-  }
+      });
+    }
 //
   updateInput(e) {
     this.setState({
@@ -55,6 +44,10 @@ export default class Search extends Component {
     .catch(error => {
       console.log(error);
     });
+  }
+
+  setCurrentJob = (job) => {
+    this.setState({job})
   }
   //
   render() {
@@ -86,14 +79,14 @@ export default class Search extends Component {
                   </button>
             </div>
           </div>
-          <div class="row mx-auto text-center w-100">
+          <div class="row mx-auto text-center">
             {this.state.jobs.map((job, i) => {
               return (
                 <div
                   key={i}
                   class="col-12 col-md-6 d-flex align-items-stretch pt-4 mx-auto text-center w-100"
                 >
-                  <div class="card text-center shadow">
+                  <div class="card text-center shadow w-100">
                     <div class="card-body d-flex flex-column">
                       <h5 class="card-title">{job.title}</h5>
                       <div class="card-text">
@@ -105,81 +98,91 @@ export default class Search extends Component {
                           <div class="col-6">{job.date_time}</div>
                         </div>
                       </div>
-                      <div class="card-footer p-3">
-                        <div class="row">
-                          <div class="col-6">
-{/* MODAL ------------------------------------------------------------------------------------------------ */}
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-toggle="modal"
-          data-target="#exampleModalCenter"
-        >
-          Profile
-        </button>
-
-        {/* <!-- Modal --> */}
-        <div
-          class="modal fade"
-          id="exampleModalCenter"
-          tabindex="-1"
-          role="dialog"
-          aria-labelledby="exampleModalCenterTitle"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalCenterTitle">
-                  Your details
-                </h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body">
-{/* INSERT PROFILE CARD HERE ---------------------------------------------------------------------- */}
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  onClick={this.submitChanges}
-                >
-                  Save changes
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-{/* END OF MODAL ---------------------------------------------------------------------------------------- */}
-                          </div>
-                          <div class="col-6">
-                            <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
-                                Message
+                    </div>
+                    <div class="card-footer p-3">
+                      <div class="row">
+                        <div class="col-6">
+                        <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
+                              Message
+                            {/* we need to connect the Pusher chatApp to this button*/}
                             </button>
-                              {/* we need to conect the Pusher chatApp to this button*/}
-                          </div>
+                        </div>
+                        <div class="col-6">
+                        <button
+                            type="button"
+                            class="btn btn-secondary"
+                            data-toggle="modal"
+                            data-target="#exampleModalCenter"
+                            onClick={() => this.setCurrentJob(job)}
+                          >
+                            Profile
+                          </button>
                         </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+            </div>
+            )})};
+      </div>
+
+                  {/* <!-- Modal --> */}
+                  <div
+                    class="modal fade"
+                    id="exampleModalCenter"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="exampleModalCenterTitle"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalCenterTitle">
+                            {this.state.job.full_name}
+                          </h5>
+                          <button
+                            type="button"
+                            class="close"
+                            data-dismiss="modal"
+                            aria-label="Close"
+                          >
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                        <img
+                          className="img-responsive modal-portrait"
+                          src={this.state.job.img}
+                          alt="portrait"
+                        />
+                      <div className="list-group-item">
+                        {this.state.job.about}
+                      </div>
+                      <div className="list-group-item">
+                      <span>Skills: </span>{this.state.job.skills}</div>
+                    </div>
+                        <div class="modal-footer">
+                          <div class="row">
+                          <div class="col-6">
+                          <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
+                              Message
+                            {/* we need to connect the Pusher chatApp to this button*/}
+                            </button>
+                          </div>
+                          <div class="col-6">
+                          <button
+                              type="button"
+                              class="btn btn-secondary"
+                              data-dismiss="modal"
+                            >
+                              Close
+                            </button>
+                            </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
         </div>
       </div>
     );

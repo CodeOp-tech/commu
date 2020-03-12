@@ -9,3 +9,7 @@
   font-weight: bold;
   padding-left: 40px;
 }
+
+.modal-portrait {
+max-width: 100%;
+}
