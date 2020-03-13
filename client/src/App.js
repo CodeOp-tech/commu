@@ -86,18 +86,11 @@ function App() {
             <ul class="backgroundImage">
               <div className="container py-4 text-center">
                 <div>
-                  <div
-                    type="button"
-                    className="btn btn-light shadow p-3 mb-5 bg-white rounded"
-                  >
-                    <img
-                      src="https://i.imgur.com/InarIgK.png"
-                      width="200"
-                      height="200"
-                      className="d-inline-block align-top"
-                      alt=""
-                    />
-                  </div>
+                  <img
+                    src="https://i.imgur.com/HesQBDj.png"
+                    className="d-inline-block align-top"
+                    alt=""
+                  />
                 </div>
                 <div className="enter">
                   <div className="row">
