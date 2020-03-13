@@ -3,10 +3,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 
 export default class Header extends Component {
-
-  logout = () =>{
-    
-  }
+  logout = () => {};
   render() {
     return (
       <div className="container py-4">
@@ -17,13 +14,17 @@ export default class Header extends Component {
                 type="button"
                 className="btn btn-light shadow p-3 mb-5 bg-white rounded"
               >
-                <img
+                <Link to="/home">
+                  
+                  <p>Commu</p>
+                  {/* <img
                   src="https://i.imgur.com/InarIgK.png"
                   width="100"
                   height="100"
                   className="d-inline-block align-top"
                   alt=""
-                />
+                /> */}
+                </Link>
               </div>
             </div>
             <div className="nav-item mx-auto profile">
@@ -57,16 +58,6 @@ export default class Header extends Component {
                   Jobs
                 </div>
               </Link>
-            </div>
-
-            <div className="nav-item mx-auto jobs">
-              <div
-                type="button"
-                className="btn btn-light shadow p-3 mb-5 bg-white rounded"
-                onClick={this.logOut}
-              >
-                log out
-              </div>
             </div>
           </nav>
         </ul>
