@@ -14,21 +14,21 @@ It can be checked here:
 In the project directory, you can run:
 
 ### Dependencies
-Run `npm install` on root folder to install dependencies related to Express.
-`cd client` and run `npm install` install dependencies related to React.
+Run `npm install` and `npm install pusher` on root folder to install dependencies related to Express and Pusher, respectively.
+`cd client`, run `npm install` and `npm install pusher-js` to install dependencies related to React and Pusher.
 
 ### Run Your Development Servers
 - Run `npm run start` in project directory to start the Express server on port 5000
 - `cd client` and run `npm run start` to start client server in development mode with hot reloading in port 3000.
 - Client is configured so all API calls will be proxied to port 5000 for a smoother development experience.
 - You can test your client app in `http://localhost:3000`
-- You can test your API in `http://localhost:5000/api`
+- You can test your API in `http://localhost:5000/app`
 
 ### Import the database
 - Run `npm run migrate` to build the database structure on your local SQL server.
-- Run `npm run seed` to fill in the "users" table with pre-created profiles and the "areas" table with the information needed for the app to run.
+- Run `npm run seed` to fill in the database with pre-created profiles and jobs for show and the "areas" table with the information needed for the app to run.
 To visualize the database layout, see attached file in `model/database.png`.
-NOTE: This image is just orientative and could be not 100% accurate with the actual database.
+NOTE: This image is just orientative and it might be not 100% accurate with the actual database.
 
 
 ## Learn More

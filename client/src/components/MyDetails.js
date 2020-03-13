@@ -133,34 +133,47 @@ export default class MyDetails extends Component {
         <header>
           <Header />
         </header>
-
-        <div className="card">
-          <div>
-            <div className="card-img-right">
-              <img
-                className="d-inline-block align-top"
-                src={user.img}
-                alt="selfportrait"
-              />
-            </div>
-
-            <div className="list-group-item">{user.full_name}</div>
-
-            <div className="list-group-item">{user.about}</div>
-
-            <div className="list-group-item">{user.skills}</div>
+        <div class="row pb-5">
+            <h1>My details:</h1>
           </div>
-        </div>
+        <div
+                  class="col-4
+                  align-items-stretch pt-4 mx-auto text-center w-100 pb-5"
+                >
+                  <div class="card text-center shadow">
+                    <img src={user.img} class="card-img-top img-fluid w-100" alt="..." />
+                    <div class="card-body d-flex flex-column">
+                      <h5 class="card-title">{user.full_name}</h5>
+                      <p class="card-text">
+                        <span>Skills: </span>
+                        {user.skills}
+                      </p>
+                      </div>
+                      <div class="card-footer p-3">
+                      <div class="row">
+                        <div class="col-12 col-lg-6">
+                        <button type="button" class="btn btn-light shadow bg-white rounded align-self-end"
+                                  data-toggle="modal"
+                                  data-target="#exampleModalCenter">
+                              Edit profile
+                            </button>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                        <button
+                            type="button"
+                            class="btn btn-danger shadow rounded align-self-end"
+                            data-toggle="modal"
+                            data-target="#exampleModalCenter"
+                            onClick={() => this.setCurrentUser(user)}
+                          >
+                            Delete profile
+                          </button>
+                        </div>
+                      </div>
+                    </div>
 
-        {/* <!-- Button trigger modal --> */}
-        <button
-          type="button"
-          class="btn btn-primary"
-          data-toggle="modal"
-          data-target="#exampleModalCenter"
-        >
-          Edit profile
-        </button>
+            </div>
+            </div>
 
         {/* <!-- Modal --> */}
         <div
@@ -262,19 +275,19 @@ export default class MyDetails extends Component {
                 </div>
               </div>
               <div class="modal-footer">
+              <button
+                  type="button"
+                  class="btn btn-primary"
+                  onClick={this.submitChanges}
+                >
+                  Save changes
+                </button>
                 <button
                   type="button"
                   class="btn btn-secondary"
                   data-dismiss="modal"
                 >
                   Close
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary"
-                  onClick={this.submitChanges}
-                >
-                  Save changes
                 </button>
               </div>
             </div>

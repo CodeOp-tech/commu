@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-
-
+import Header from "./Header";
+import Footer from "./Footer";
+import "./Home.css";
+import "./Header.css";
+import "./Footer.css";
+//
 export default class Search extends Component {
   //
   constructor(props) {
@@ -52,15 +56,18 @@ export default class Search extends Component {
   //
   render() {
     return (
-      <div class="container-fluid p-5">
-        <div class="row">
-          <div class="col-md-6 col-sm-12">
+      <div class="container fluid p-5">
+      <div>
+        <h3>
+          <Header />
+        </h3>
+        <div class="row pb-5 mx-auto">
+          <div class="col-lg-6 col-sm-12">
             <h1>Jobs in your area:</h1>
           </div>
-          <div class="col-md-6 col-sm-12">
+          <div class="col-lg-6 col-sm-12">
             <div
-                  type="button"
-                  class="btn btn-light shadow p-3 mr-5 bg-white rounded input-group-prepend"
+                  class="btn-light shadow p-3 bg-white rounded input-group-prepend"
                 >
                   <img
                     src="https://i.imgur.com/fgnMByB.png"
@@ -77,6 +84,7 @@ export default class Search extends Component {
                   onClick={e => this.searchJobs()}>
                     SEARCH
                   </button>
+                  </div>
             </div>
           </div>
           <div class="row mx-auto text-center">
@@ -183,8 +191,11 @@ export default class Search extends Component {
                         </div>
                       </div>
                     </div>
-        </div>
       </div>
+      <footer>
+          <Footer />
+        </footer>
+        </div>
     );
   }
 }

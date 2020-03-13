@@ -72,13 +72,10 @@ updateInput(event) {
         <h3>
           <Header />
         </h3>
-        <div>
-          <Link class="text-decoration-none text-dark" to="/post"></Link>
-          POST JOBS
-        </div>
-        <div class="d-flex p-2 bd-highlight"></div>
-        {/* ADDING CODE FROM HERE ON - Daena */}
-        <div class="mx-auto text-center w-100">
+        <div class="row pb-5">
+            <h1>Post jobs:</h1>
+          </div>
+        <div class="mx-auto pb-5 bd-highlight text-center w-100 pb-5">
           <div class="card text-center shadow">
             <div class="card-body d-flex flex-column">
               <div class="card-title">
@@ -116,7 +113,6 @@ updateInput(event) {
             </div>
           </div>
         </div>
-        {/* END OF MY CODE */}
         <footer>
           <Footer />
         </footer>
