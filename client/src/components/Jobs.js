@@ -34,7 +34,7 @@ export default class Jobs extends Component {
         <h3>
           <Header />
         </h3>
-        <p className="coverImage">
+        <p className="heroJobs">
           <div className="post">
             <Link className="text-decoration-none text-dark" to="/post">
               <div

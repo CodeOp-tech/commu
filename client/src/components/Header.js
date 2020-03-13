@@ -12,18 +12,17 @@ export default class Header extends Component {
             <div className="nav-item mx-auto">
               <div
                 type="button"
-                className="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                className="btn btn-light shadow bg-white rounded max-auto"
               >
                 <Link to="/home">
-                  
-                  <p>Commu</p>
-                  {/* <img
-                  src="https://i.imgur.com/InarIgK.png"
-                  width="100"
-                  height="100"
-                  className="d-inline-block align-top"
-                  alt=""
-                /> */}
+                  <p>
+                    <img
+                      src="https://i.imgur.com/HesQBDj.png"
+                      className="d-inline-block align-top"
+                      height="120"
+                      alt=""
+                    />
+                  </p>
                 </Link>
               </div>
             </div>

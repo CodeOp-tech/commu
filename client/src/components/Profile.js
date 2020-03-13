@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
-import "./Home.css";
+
 import "./Header.css";
 import "./Footer.css";
 import "./Profile.css";
@@ -14,7 +14,7 @@ export default class Profile extends Component {
         <h3>
           <Header />
         </h3>
-        <p className="coverImage">
+        <p className="heroProfile">
           <div className="mydetails">
             <Link class="text-decoration-none text-dark" to="/mydetails">
               <div
