@@ -10,16 +10,19 @@ import "./Profile.css";
 export default class Profile extends Component {
   render() {
     return (
-      <div class="container py-4">
-        <h3>
+      <div>
+      
+        <div className="inProfile">
           <Header />
-        </h3>
-        <p className="heroProfile">
+        </div>
+        <div class="container py-4 containerProfile">
+        <div className="heroProfile">
+          <div className="profileBar">
           <div className="mydetails">
             <Link class="text-decoration-none text-dark" to="/mydetails">
               <div
                 type="button"
-                class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                class="btn"
               >
                 <img
                   src="https://i.imgur.com/A0gaL8t.png"
@@ -32,10 +35,10 @@ export default class Profile extends Component {
           </div>
 
           <div className="inbox">
-            <Link class="text-decoration-none text-dark" to="/inbox">
+            <Link class="text-decoration-none text-dark" to="/profile">
               <div
                 type="button"
-                class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                class="btn"
               >
                 <img
                   src="https://i.imgur.com/DPtqACQ.png"
@@ -47,10 +50,10 @@ export default class Profile extends Component {
             </Link>
           </div>
           <div className="favorites">
-            <Link class="text-decoration-none text-dark" to="/favorites">
+            <Link class="text-decoration-none text-dark" to="/profile">
               <div
                 type="button"
-                class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                class="btn"
               >
                 <img
                   src="https://i.imgur.com/2v7CvJs.png"
@@ -61,11 +64,14 @@ export default class Profile extends Component {
               </div>
             </Link>
           </div>
-        </p>
+          </div>
+        </div>
         <footer>
           <Footer />
         </footer>
       </div>
+      </div>
+      
     );
   }
 }

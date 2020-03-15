@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "./Header.css";
 import "./Footer.css";
+import "./MyDetails.css";
 import axios from "axios";
 
 export default class MyDetails extends Component {
@@ -129,18 +130,15 @@ export default class MyDetails extends Component {
   render() {
     let user = this.state.user;
     return (
-      <div className="container py-4">
+      <div>
         <header>
           <Header />
         </header>
-        <div class="row pb-5">
-            <h1>My details:</h1>
-          </div>
         <div
                   class="col-4
                   align-items-stretch pt-4 mx-auto text-center w-100 pb-5"
                 >
-                  <div class="card text-center shadow">
+                  <div class="card shadow cardYou">
                     <img src={user.img} class="card-img-top img-fluid w-100" alt="..." />
                     <div class="card-body d-flex flex-column">
                       <h5 class="card-title">{user.full_name}</h5>
@@ -149,27 +147,17 @@ export default class MyDetails extends Component {
                         {user.skills}
                       </p>
                       </div>
-                      <div class="card-footer p-3">
-                      <div class="row">
-                        <div class="col-12 col-lg-6">
-                        <button type="button" class="btn btn-light shadow bg-white rounded align-self-end"
+                      <div class="card-footer p-3 cardFoot">
+                      
+                        
+                        <button type="button" class="btn btnUser"
                                   data-toggle="modal"
                                   data-target="#exampleModalCenter">
                               Edit profile
                             </button>
-                        </div>
-                        <div class="col-12 col-lg-6">
-                        <button
-                            type="button"
-                            class="btn btn-danger shadow rounded align-self-end"
-                            data-toggle="modal"
-                            data-target="#exampleModalCenter"
-                            onClick={() => this.setCurrentUser(user)}
-                          >
-                            Delete profile
-                          </button>
-                        </div>
-                      </div>
+                     
+                        
+                     
                     </div>
 
             </div>
@@ -185,19 +173,12 @@ export default class MyDetails extends Component {
           aria-hidden="true"
         >
           <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
+            <div class="modal-content modalEdit">
+              <div class="modal-header modalHead">
                 <h5 class="modal-title" id="exampleModalCenterTitle">
                   Your details
                 </h5>
-                <button
-                  type="button"
-                  class="close"
-                  data-dismiss="modal"
-                  aria-label="Close"
-                >
-                  <span aria-hidden="true">&times;</span>
-                </button>
+                
               </div>
               <div class="modal-body">
                 <div class="form-group">
@@ -277,14 +258,14 @@ export default class MyDetails extends Component {
               <div class="modal-footer">
               <button
                   type="button"
-                  class="btn btn-primary"
+                  class="btn"
                   onClick={this.submitChanges}
                 >
                   Save changes
                 </button>
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn"
                   data-dismiss="modal"
                 >
                   Close
@@ -298,6 +279,7 @@ export default class MyDetails extends Component {
           <Footer />
         </footer>
       </div>
+     
     );
   }
 }

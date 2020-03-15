@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import "./Home.css";
 import "./Header.css";
 import "./Footer.css";
+import "./Search.css";
 //
 export default class Search extends Component {
   //
@@ -56,11 +57,11 @@ export default class Search extends Component {
   //
   render() {
     return (
-      <div class="container fluid p-5">
+      
       <div>
-        <h3>
+        <header>
           <Header />
-        </h3>
+        </header>
         <div class="row pb-5 mx-auto">
           <div class="col-lg-6 col-sm-12">
             <h1>Jobs in your area:</h1>
@@ -80,7 +81,7 @@ export default class Search extends Component {
                     if (event.key === 'Enter') {
                       this.searchJobs()}}}
                   value={this.state.input}></input>
-                  <button type="button" class="btn btn-primary shadow ml-3"
+                  <button type="button" class="btn"
                   onClick={e => this.searchJobs()}>
                     SEARCH
                   </button>
@@ -110,7 +111,7 @@ export default class Search extends Component {
                     <div class="card-footer p-3">
                       <div class="row">
                         <div class="col-6">
-                        <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
+                        <button type="button" class="btn shadow bg-white rounded mt-auto">
                               Message
                             {/* we need to connect the Pusher chatApp to this button*/}
                             </button>
@@ -118,7 +119,7 @@ export default class Search extends Component {
                         <div class="col-6">
                         <button
                             type="button"
-                            class="btn btn-secondary"
+                            class="btn "
                             data-toggle="modal"
                             data-target="#exampleModalCenter"
                             onClick={() => this.setCurrentJob(job)}
@@ -143,19 +144,12 @@ export default class Search extends Component {
                     aria-hidden="true"
                   >
                     <div class="modal-dialog modal-dialog-centered" role="document">
-                      <div class="modal-content">
+                      <div class="modal-content modalEdit">
                         <div class="modal-header">
                           <h5 class="modal-title" id="exampleModalCenterTitle">
                             {this.state.job.full_name}
                           </h5>
-                          <button
-                            type="button"
-                            class="close"
-                            data-dismiss="modal"
-                            aria-label="Close"
-                          >
-                            <span aria-hidden="true">&times;</span>
-                          </button>
+                         
                         </div>
                         <div class="modal-body">
                         <img
@@ -171,16 +165,11 @@ export default class Search extends Component {
                     </div>
                         <div class="modal-footer">
                           <div class="row">
-                          <div class="col-6">
-                          <button type="button" class="btn btn-light shadow bg-white rounded mt-auto">
-                              Message
-                            {/* we need to connect the Pusher chatApp to this button*/}
-                            </button>
-                          </div>
+                          
                           <div class="col-6">
                           <button
                               type="button"
-                              class="btn btn-secondary"
+                              class="btn "
                               data-dismiss="modal"
                             >
                               Close
@@ -191,7 +180,7 @@ export default class Search extends Component {
                         </div>
                       </div>
                     </div>
-      </div>
+     
       <footer>
           <Footer />
         </footer>

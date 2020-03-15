@@ -3,3 +3,26 @@
   background-image: url("https://i.imgur.com/r88jX6G.jpg");
   height: 600px;
 }
+.cardCommu{
+  border:none;
+
+}
+.footCommu .btn {
+
+  display:inline-block;
+}
+
+.modalEdit{
+  height:1000px;
+  width:500px;
+ 
+}
+.card-footer{
+  background-color:#F7F4F4 !important;
+  border:none;
+}
+
+.card-img-top{
+  max-width:  100%;
+  max-height:100%;
+}

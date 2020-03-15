@@ -10,23 +10,13 @@ export default class Footer extends Component {
           <div className="row text-center">
             <div className="footerDesign mx-auto">
               <Link className="text-decoration-none text-dark" to="/home">
-                <div
-                  type="button"
-                  className="btn btn-light shadow p-3 mb-5 bg-white rounded"
-                >
-                  About
-                </div>
+                <div>About</div>
               </Link>
             </div>
 
             <div className="footerDesign mx-auto">
               <Link className="text-decoration-none text-dark" to="/home">
-                <div
-                  type="button"
-                  className="btn btn-light shadow p-3 mb-5 bg-white rounded"
-                >
-                  Guidelines
-                </div>
+                <div>Guidelines</div>
               </Link>
             </div>
           </div>

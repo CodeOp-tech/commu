@@ -1,18 +1,19 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Chat from "./Chat";
 import "./Header.css";
 
 export default class Header extends Component {
   logout = () => {};
   render() {
     return (
-      <div className="container py-4">
+      <div>
         <ul className="backgroundHeader">
           <nav className="navbar-expand-lg row">
-            <div className="nav-item mx-auto">
+            <div>
               <div
                 type="button"
-                className="btn btn-light shadow bg-white rounded max-auto"
+                className="btn btnNav"
               >
                 <Link to="/home">
                   <p>
@@ -30,7 +31,7 @@ export default class Header extends Component {
               <Link class="text-decoration-none text-dark" to="/profile">
                 <div
                   type="button"
-                  className="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                  className="btn btnNav"
                 >
                   Profile
                 </div>
@@ -41,7 +42,7 @@ export default class Header extends Component {
               <Link class="text-decoration-none text-dark" to="/community">
                 <div
                   type="button"
-                  className="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                  className="btn btnNav"
                 >
                   Community
                 </div>
@@ -52,11 +53,25 @@ export default class Header extends Component {
               <Link class="text-decoration-none text-dark" to="/jobs">
                 <div
                   type="button"
-                  className="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                  className="btn btnNav"
                 >
                   Jobs
                 </div>
               </Link>
+
+              <div className="nav-item mx-auto chat">
+              <Link class="text-decoration-none text-dark" to="/chat/1/2">
+                <div
+                  type="button"
+                  className="btn btnNav"
+                >
+                  Chat
+                </div>
+              </Link>
+
+            
+          </div>
+
             </div>
           </nav>
         </ul>

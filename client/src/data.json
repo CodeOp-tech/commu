@@ -44,6 +44,33 @@
             "img": "https://ca.slack-edge.com/TQUM4SE2J-UQJH2BMJ5-78fa07925e0b-512",
             "skills": ["Git", "Teacher"],
             "about": "I'm Emefa, and it's nice to meet you."
+        },
+        {
+            "full_name": "Marcel",
+            "email": "marcel@commu.com",
+            "password": "root",
+            "area_id": 1,
+            "img": "https://i.imgur.com/xD1K7sO.jpg",
+            "skills": ["Cartography", "Teacher", "Crafts"],
+            "about": "Hello! I'm Marcel and I used to be a geography teacher. I mostly spend my time doing what I like."
+        },
+        {
+            "full_name": "Anna",
+            "email": "anna@commu.com",
+            "password": "root",
+            "area_id": 1,
+            "img": "https://i.imgur.com/Xm9v71D.jpg",
+            "skills": ["Sculpture", "Dancer","Chef"],
+            "about": "I'm Anna, and I'm a multi tasking person."
+        },
+        {
+            "full_name": "Martin",
+            "email": "martin@commu.com",
+            "password": "root",
+            "area_id": 1,
+            "img": "https://i.imgur.com/cB96XlS.jpg",
+            "skills": ["Accountant", "Interior Design"],
+            "about": "I'm Martin, and I'm estonian. I've been living in this neighbourhood for 5 years. Hope to see you around!"
         }
     ],
 
