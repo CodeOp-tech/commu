@@ -21,3 +21,8 @@
   background-color:#F7F4F4 !important;
   border:none;
 }
+
+.card-img-top{
+  max-width:  100%;
+  max-height:100%;
+}

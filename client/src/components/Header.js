@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import Chat from "./Chat";
 import "./Header.css";
 
 export default class Header extends Component {
@@ -57,6 +58,20 @@ export default class Header extends Component {
                   Jobs
                 </div>
               </Link>
+
+              <div className="nav-item mx-auto chat">
+              <Link class="text-decoration-none text-dark" to="/chat/1/2">
+                <div
+                  type="button"
+                  className="btn btnNav"
+                >
+                  Chat
+                </div>
+              </Link>
+
+            
+          </div>
+
             </div>
           </nav>
         </ul>

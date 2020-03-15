@@ -68,16 +68,16 @@ updateInput(event) {
 //
   render() {
     return (
-      <div class="container py-4">
-        <h3>
+      <div>
+        <header>
           <Header />
-        </h3>
+        </header>
         <div class="row pb-5">
             <h1>Post jobs:</h1>
           </div>
         <div class="mx-auto pb-5 bd-highlight text-center w-100 pb-5">
           <div class="card text-center shadow">
-            <div class="card-body d-flex flex-column">
+            <div class="card-body d-flex flex-column cardPost">
               <div class="card-title">
                 <input name="title" type="text" class="form-control"
                 placeholder="Title (Máx 50 characters)"

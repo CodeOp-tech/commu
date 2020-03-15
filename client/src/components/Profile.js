@@ -35,7 +35,7 @@ export default class Profile extends Component {
           </div>
 
           <div className="inbox">
-            <Link class="text-decoration-none text-dark" to="/inbox">
+            <Link class="text-decoration-none text-dark" to="/profile">
               <div
                 type="button"
                 class="btn"
@@ -50,7 +50,7 @@ export default class Profile extends Component {
             </Link>
           </div>
           <div className="favorites">
-            <Link class="text-decoration-none text-dark" to="/favorites">
+            <Link class="text-decoration-none text-dark" to="/profile">
               <div
                 type="button"
                 class="btn"

@@ -5,7 +5,7 @@ import Footer from "./Footer";
 import "./Home.css";
 import "./Header.css";
 import "./Footer.css";
-import Chat from "./Chat";
+
 
 export default class Home extends Component {
   render() {
@@ -15,11 +15,6 @@ export default class Home extends Component {
           <div className="header">
             <Header /></div>
             
-          {/* <div className="coverImage">
-            <Link to="/chat/1/2" className="btn btn-info">
-              Open chat window
-            </Link>
-          </div> */}
          
           <div className="hero">
             <p>Hello Neighbour,</p> 
@@ -29,7 +24,7 @@ export default class Home extends Component {
           <h2>Your Neighbourhood storyboard</h2>
           <div className="member1">
             <div className="p1">
-            <p>Marcel is your neighbour to go if your curious to know more about maps! Every month he organizes a cartagraphy workshop. </p>
+            <p>Marcel is your neighbour to go if your curious to know more about maps! Every month he organizes a cartography workshop. </p>
             </div>
             <img src="https://i.imgur.com/IfRQ5qC.jpg"/>
           </div>
