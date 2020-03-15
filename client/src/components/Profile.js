@@ -10,10 +10,12 @@ import "./Profile.css";
 export default class Profile extends Component {
   render() {
     return (
-      <div class="container py-4">
-        <h3>
+      <div>
+      
+        <div>
           <Header />
-        </h3>
+        </div>
+        <div class="container py-4">
         <p className="heroProfile">
           <div className="mydetails">
             <Link class="text-decoration-none text-dark" to="/mydetails">
@@ -65,6 +67,7 @@ export default class Profile extends Component {
         <footer>
           <Footer />
         </footer>
+      </div>
       </div>
     );
   }

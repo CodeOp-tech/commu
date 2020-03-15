@@ -30,10 +30,12 @@ export default class Jobs extends Component {
 
   render() {
     return (
-      <div className="container py-4">
-        <h3>
+      <div>
+      
+        <div>
           <Header />
-        </h3>
+        </div>
+        <div className="container py-4">
         <p className="heroJobs">
           <div className="post">
             <Link className="text-decoration-none text-dark" to="/post">
@@ -70,6 +72,7 @@ export default class Jobs extends Component {
         <footer>
           <Footer />
         </footer>
+      </div>
       </div>
     );
   }

@@ -45,9 +45,11 @@ export default class SignIn extends Component {
         <div className="col no-gutters">
           <div className="leftside"></div>
         </div>
+       
         <div className="col no-gutters">
         <div className="rightside">
-        <div className="card">
+          
+        <div className="card blueCard">
       <h1>Welcome back!</h1>
       <form onSubmit={this.handleSubmit} method="POST">
         <div class="form-group">
@@ -69,15 +71,17 @@ export default class SignIn extends Component {
           className="form-control"
         />
         <button class="btn" onClick={this.attemptLogin}>Login</button>
+       
         </div>
       </form>
-      
+      </div>
+      </div>
       </div>
         </div>
         </div>
       
-      </div>
-      </div>
+     
+     
     );
   }
 }

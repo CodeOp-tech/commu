@@ -35,10 +35,12 @@ export default class Community extends Component {
   render() {
     return (
       <div>
-        <div class="container p-4">
-          <h3>
+        
+          <div>
             <Header />
-          </h3>
+            </div>
+            <div class="container p-4">
+          
           <div className="heroCommunity">
             <p></p>
           </div>
