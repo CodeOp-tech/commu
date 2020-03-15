@@ -1,6 +1,4 @@
-body {
-  background-color: rgba(255, 255, 255, 0.75);
-}
+
 
 h5 {
   font-weight: bold;
@@ -12,10 +10,17 @@ span {
 .backgroundImage {
   background-image: url("https://i.imgur.com/8NnJkZ1.jpg");
   background-size: cover;
-  height: 1000px;
+  background-position: center top;
+  height: 100vh;
 }
 
 .enter {
+  margin-top: 100px;
   font-family: "Comfortaa";
   font-weight: bold;
+}
+
+.btn-light{
+  background-color:#E2B69C;
+  border-color:#E2B69C;
 }

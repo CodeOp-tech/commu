@@ -12,14 +12,14 @@ export default class Home extends Component {
     return (
       <div>
         <div className="container py-4">
-          <h1>
+          <div>
             <Header />
           <p className="coverImage">
             <Link to="/chat/1/2" className="btn btn-info">
               Open chat window
             </Link>
           </p>
-          </h1>
+          </div>
           <div className="hero">
             <p>Hello Neighbour,</p> 
             <p>Come on in!</p>

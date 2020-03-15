@@ -4,6 +4,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import "./Header.css";
 import "./Footer.css";
+import "./MyDetails.css";
 import axios from "axios";
 
 export default class MyDetails extends Component {
@@ -152,23 +153,13 @@ export default class MyDetails extends Component {
                       <div class="card-footer p-3">
                       <div class="row">
                         <div class="col-12 col-lg-6">
-                        <button type="button" class="btn btn-light shadow bg-white rounded align-self-end"
+                        <button type="button" class="btn btn-light shadow bg-white rounded  "
                                   data-toggle="modal"
                                   data-target="#exampleModalCenter">
                               Edit profile
                             </button>
                         </div>
-                        <div class="col-12 col-lg-6">
-                        <button
-                            type="button"
-                            class="btn btn-danger shadow rounded align-self-end"
-                            data-toggle="modal"
-                            data-target="#exampleModalCenter"
-                            onClick={() => this.setCurrentUser(user)}
-                          >
-                            Delete profile
-                          </button>
-                        </div>
+                        
                       </div>
                     </div>
 

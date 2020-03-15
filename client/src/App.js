@@ -83,7 +83,7 @@ function App() {
           </Route> */}
 
           <Route path="/">
-            <ul class="backgroundImage">
+            <div class="backgroundImage">
               <div className="container py-4 text-center">
                 <div>
                   <img
@@ -101,7 +101,7 @@ function App() {
                       >
                         <button
                           type="button"
-                          class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                          class="btn btn-light shadow p-3 mb-5 rounded"
                         >
                           Sign in
                         </button>
@@ -114,7 +114,7 @@ function App() {
                       >
                         <button
                           type="button"
-                          class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                          class="btn btn-light shadow p-3 mb-5 rounded"
                         >
                           Join the community!
                         </button>
@@ -123,7 +123,7 @@ function App() {
                   </div>
                 </div>
               </div>
-            </ul>
+            </div>
           </Route>
         </Switch>
       </div>

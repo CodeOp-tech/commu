@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import "./SignUp.css";
 
 import axios from "axios";
 
@@ -9,7 +10,7 @@ export default class SignUp extends Component {
       full_name: "",
       email: "",
       password: "",
-      area_Id: 0,
+      areaId: 0,
       users: [],
       areas: []
     };
@@ -40,7 +41,7 @@ export default class SignUp extends Component {
 
   getAreaId = e => {
     this.setState({
-      area_Id: e.target.value
+      areaId: e.target.value
     });
   };
 
@@ -54,7 +55,7 @@ export default class SignUp extends Component {
         full_name: this.state.full_name,
         email: this.state.email,
         password: this.state.password,
-        area_id: this.state.area_id
+        area_id: this.state.areaId
       }
     })
       .then(results => {
@@ -85,8 +86,10 @@ export default class SignUp extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Create account</h1>
+         <div className="all">
+           
+        <div className="card">
+        <h1>Join your community </h1>
         <form >
           <div class="form-group">
             <label for="exampleFormControlInput1">Full name</label>
@@ -120,6 +123,7 @@ export default class SignUp extends Component {
               // ref={register}
             />
             <label for="exampleFormControlInput1">
+           
               Choose your neighborhood
             </label>
             <select
@@ -152,7 +156,7 @@ export default class SignUp extends Component {
 
           <button
             type="button"
-            class="btn btn-dark"
+            class="btn"
             data-toggle="modal"
             data-target="#staticBackdrop"
             onClick={this.addUser}
@@ -187,7 +191,7 @@ export default class SignUp extends Component {
                 {/* <Link to="/signIn"> */}
                 <button
                   type="button"
-                  class="btn btn-secondary"
+                  class="btn"
                   data-dismiss="modal"
                   onClick={e => this.handleSubmit(e)}
                 >
@@ -200,6 +204,10 @@ export default class SignUp extends Component {
           </div>
         </form>
       </div>
+        </div>
+       
+      
+      
     );
   }
 }
