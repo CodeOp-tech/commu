@@ -32,16 +32,17 @@ export default class Jobs extends Component {
     return (
       <div>
       
-        <div>
+        <header>
           <Header />
-        </div>
+        </header>
         <div className="container py-4">
-        <p className="heroJobs">
+        <div className="heroJobs">
+          <div className="jobBar">
           <div className="post">
             <Link className="text-decoration-none text-dark" to="/post">
               <div
                 type="button"
-                class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                class="btn "
               >
                 <img
                   src="https://i.imgur.com/iDv7mXC.png"
@@ -57,7 +58,7 @@ export default class Jobs extends Component {
             <Link className="text-decoration-none text-dark" to="/search">
               <div
                 type="button"
-                class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                class="btn "
               >
                 <img
                   src="https://i.imgur.com/fgnMByB.png"
@@ -67,8 +68,9 @@ export default class Jobs extends Component {
                 SEARCH
               </div>
             </Link>
+            </div>
           </div>
-        </p>
+        </div>
         <footer>
           <Footer />
         </footer>

@@ -3,19 +3,33 @@
   font-weight: bold;
   padding-top: 40px;
   padding-left: 40px;
+  display:inline-block;
 }
 .inbox {
   font-family: "Comfortaa";
   font-weight: bold;
   padding-left: 40px;
+  display:inline-block;
 }
 .favorites {
   font-family: "Comfortaa";
   font-weight: bold;
   padding-left: 40px;
+  display:inline-block;
 }
 .heroProfile {
   background-size: cover;
   background-image: url("https://i.imgur.com/3Awxx5V.jpg");
-  height: 600px;
+  height: 800px;
+  max-width:100%
 }
+
+.inProfile{
+  
+  margin-right:220px;
+}
+
+/* .profileBar{
+  margin-left:30px;
+} */
+

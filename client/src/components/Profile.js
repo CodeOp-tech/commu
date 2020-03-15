@@ -12,16 +12,17 @@ export default class Profile extends Component {
     return (
       <div>
       
-        <div>
+        <div className="inProfile">
           <Header />
         </div>
-        <div class="container py-4">
-        <p className="heroProfile">
+        <div class="container py-4 containerProfile">
+        <div className="heroProfile">
+          <div className="profileBar">
           <div className="mydetails">
             <Link class="text-decoration-none text-dark" to="/mydetails">
               <div
                 type="button"
-                class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                class="btn"
               >
                 <img
                   src="https://i.imgur.com/A0gaL8t.png"
@@ -37,7 +38,7 @@ export default class Profile extends Component {
             <Link class="text-decoration-none text-dark" to="/inbox">
               <div
                 type="button"
-                class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                class="btn"
               >
                 <img
                   src="https://i.imgur.com/DPtqACQ.png"
@@ -52,7 +53,7 @@ export default class Profile extends Component {
             <Link class="text-decoration-none text-dark" to="/favorites">
               <div
                 type="button"
-                class="btn btn-light shadow p-3 mb-5 bg-white rounded"
+                class="btn"
               >
                 <img
                   src="https://i.imgur.com/2v7CvJs.png"
@@ -63,12 +64,14 @@ export default class Profile extends Component {
               </div>
             </Link>
           </div>
-        </p>
+          </div>
+        </div>
         <footer>
           <Footer />
         </footer>
       </div>
       </div>
+      
     );
   }
 }

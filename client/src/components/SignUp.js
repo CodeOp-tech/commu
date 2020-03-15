@@ -86,7 +86,7 @@ export default class SignUp extends Component {
   render() {
     return (
       <div className="all">
-        <div className="card">
+        <div className="card cardUp">
           <h1>Join your community </h1>
           <form>
             <div class="form-group">
@@ -153,7 +153,7 @@ export default class SignUp extends Component {
 
             <button
               type="button"
-              class="btn"
+              class="btn btnJoin"
               data-toggle="modal"
               data-target="#staticBackdrop"
               onClick={this.addUser}

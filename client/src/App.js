@@ -83,46 +83,47 @@ function App() {
           </Route> */}
 
           <Route path="/">
+            <div>
             <div class="backgroundImage">
-              <div className="container py-4 text-center">
-                <div>
-                  <img
-                    src="https://i.imgur.com/HesQBDj.png"
-                    className="d-inline-block align-top"
-                    alt=""
-                  />
+
+         
+              <div className="logo">
+              <div >
+                
+                <Link
+                          className="text-decoration-none text-dark"
+                          to="/signIn"
+                        >
+                          
+                            <a>Login</a>
+                            
+                          
+                        </Link>
+                       
                 </div>
-                <div className="enter">
-                  <div className="row">
-                    <div className="col-sm-12 text-center">
-                      <Link
-                        className="text-decoration-none text-dark"
-                        to="/signIn"
-                      >
-                        <button
-                          type="button"
-                          class="btn btn-light shadow p-3 mb-5 rounded"
+                <img
+                  src="https://i.imgur.com/HesQBDj.png"
+                  className="d-inline-block align-top"
+                  alt=""
+                />
+                
+                <div> 
+                <Link
+                          className="text-decoration-none text-dark"
+                          to="/signUp"
                         >
-                          Sign in
-                        </button>
-                      </Link>
-                    </div>
-                    <div className="col-sm-12 text-center">
-                      <Link
-                        className="text-decoration-none text-dark"
-                        to="/signUp"
-                      >
-                        <button
-                          type="button"
-                          class="btn btn-light shadow p-3 mb-5 rounded"
-                        >
-                          Join the community!
-                        </button>
-                      </Link>
-                    </div>
-                  </div>
+                          
+                            <a>Join the community</a>
+                           
+                          
+                        </Link>
+                </div>
                 </div>
               </div>
+              
+              
+              
+              
             </div>
           </Route>
         </Switch>

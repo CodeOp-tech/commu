@@ -11,15 +11,22 @@
 .nav-item {
   padding-top: 25px;
   
+  
 }
 .profile {
   font-weight: bold;
+  
 }
 .community {
   font-weight: bold;
+ 
 }
 .jobs {
   font-weight: bold;
+  
+}
+.btn{
+  border:none;
 }
 .btnNav {
   text-decoration: none;
@@ -27,4 +34,5 @@
 }
 a p img{
   padding-bottom: 0;
+  
 }
